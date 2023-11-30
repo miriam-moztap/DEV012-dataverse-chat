@@ -17,3 +17,28 @@ TODO:
 2.- Pasar "root element" a router.
 3.- Invocar el router para renderizar la vista correcta.
 */
+import {Home} from './views/Home';
+// ... import other views
+import { setRootEl, setRoutes, onURLChange } from './router.js';
+
+// Define your routes and their associated views
+const routes = {
+  "/": Home,
+  "/error" : 'Hola',
+};
+
+const viewContainer = document.getElementById('root');
+
+// Assign the routes
+setRoutes(routes);
+
+setRootEl(viewContainer);
+
+
+// Set the root element where views will be rendered
+document.addEventListener("DOMContentLoaded", (event) => {
+ onURLChange(event.target.location.pathname);
+    
+});
+
+
