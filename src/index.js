@@ -17,7 +17,7 @@ TODO:
 2.- Pasar "root element" a router.
 3.- Invocar el router para renderizar la vista correcta.
 */
-import {Home} from './views/Home';
+import {Home} from './views/Home.js';
 // ... import other views
 import { setRootEl, setRoutes, onURLChange } from './router.js';
 
