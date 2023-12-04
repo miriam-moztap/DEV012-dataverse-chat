@@ -5,22 +5,22 @@ export function Prueba (props) {
     viewEl.innerHTML = "Welcome to the home page!";
     return viewEl;
   }
+  import data from '/data/dataset.js';
+  const dataArray = Object.values(data);
+  console.log(typeof dataArray);
 
-  export const renderItems = (data) => {
-
-    const ul = document.createElement('ul');
-    let lista = "";
-    
+  const contenedorCanciones = document.getElementById("root");
   
-    //lista.className= 'card';
-    
-    data.forEach(element => {
+  export function renderItems (dataArray) {
+    const ul = document.createElement('ul');
+    for (const element of dataArray) {
         let li = document.createElement('li');
         li.className = 'tarjeta';
         li.setAttribute('itemscope', '');
         li.setAttribute('itemtype', 'artista');
         li.setAttribute('data-id', element.id);
-      lista += `<li class="liClass" itemscope itemtype="Artist" data-id=${element.id}>
+       
+        let tarjeta = ` 
   
       <dl itemscope itemtype="Artist">
         <img class="imag" src="${element.imageUrl}" alt="imagen"/>
@@ -31,13 +31,15 @@ export function Prueba (props) {
         <dt><strong>Solista o grupo:</strong></dt><dd itemprop="artist">${element.facts.artist}</dd>
       </dl>
       </li>`
-      
-    });
-   
-    return `<ul class="ulClass">${lista}</ul>`;
+      li.innerHTML = tarjeta;
+      ul.appendChild(li);
+     
+    };
+    return ul;
     
   };
+  contenedorCanciones.appendChild(ul);
+    //contenedorCanciones.innerHTML = renderItems(dataArray);
+    console.log(contenedorCanciones);
+ //contenedorCanciones.innerHTML = renderItems(dataArray);
 
-export function Home () {
-
-}
