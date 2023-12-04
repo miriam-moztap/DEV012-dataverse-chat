@@ -20,7 +20,7 @@ TODO:
 import {Prueba} from './views/Home.js';
 // ... import other views
 import { setRootEl, setRoutes, onURLChange } from './router.js';
-
+import { renderItems } from './views/Home.js';
 // Define your routes and their associated views
 const routes = {
   "/": Prueba,
