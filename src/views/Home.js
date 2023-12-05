@@ -1,45 +1,68 @@
+
+import data from '/data/dataset.js';
 // src/views/Home.js
 
-export function Prueba (props) {
-    const viewEl = document.createElement('p');
-    viewEl.innerHTML = "Welcome to the home page!";
-    return viewEl;
-  }
-  import data from '/data/dataset.js';
-  const dataArray = Object.values(data);
-  console.log(typeof dataArray);
+export function Prueba(props) {
+  const viewEl = document.createElement('p');
+  viewEl.innerHTML = "Welcome to the home page!";
+  return viewEl;
+}
 
-  const contenedorCanciones = document.getElementById("root");
-  
-  export function renderItems (dataArray) {
-    const ul = document.createElement('ul');
-    for (const element of dataArray) {
-        let li = document.createElement('li');
-        li.className = 'tarjeta';
-        li.setAttribute('itemscope', '');
-        li.setAttribute('itemtype', 'artista');
-        li.setAttribute('data-id', element.id);
-       
-        let tarjeta = ` 
-  
-      <dl itemscope itemtype="Artist">
-        <img class="imag" src="${element.imageUrl}" alt="imagen"/>
-        <dt><strong>Nombre:</strong></dt><dd itemprop="name">${element.name}</dd>
-        <dt><strong>Descripción:</strong></dt><dd itemprop="description">${element.shortDescription}</dd>
-        <dt><strong>Género:</strong></dt><dd itemprop="genre">${element.facts.genre}</dd>
-        <dt><strong>Número de Albumnes:</strong></dt><dd itemprop="albums">${element.facts.albums}</dd>
-        <dt><strong>Solista o grupo:</strong></dt><dd itemprop="artist">${element.facts.artist}</dd>
-      </dl>
-      </li>`
-      li.innerHTML = tarjeta;
-      ul.appendChild(li);
-     
-    };
-    return ul;
+export function renderItems(data) {
+const ul = document.createElement('ul');
+let liCompilados="";
+  for (const element of data) {
+
+    //elementos li
+    let li=document.createElement('li');
+    li.className='tarjeta';
+    li.setAttribute('itemscope', '');
+    li.setAttribute('itemtype', 'Artist');
+    li.setAttribute('data-id', element.id);
+
+    //ahora, cada elemento li tiene un elemento dl que contiene a la imagen, el dt y el dd. Primero hacer el elemento dl
+
+    const dl = document.createElement('dl');
+    dl.setAttribute('itemscope', '');
+    dl.setAttribute('itemtype','Artist');
+
+    //aquí se crea el elemento de la imagen y se anexa al elemento dl
+    const img = document.createElement('img');
+    img.className= 'image';
+    img.src = element.imageUrl;
+    img.alt='imagen';
+    dl.appendChild(img);
     
-  };
-  contenedorCanciones.appendChild(ul);
-    //contenedorCanciones.innerHTML = renderItems(dataArray);
-    console.log(contenedorCanciones);
- //contenedorCanciones.innerHTML = renderItems(dataArray);
+
+    //ahora crear los elementos dt y dd pero esto se hace para cada una de las claves de cada elemento. las claves son el id, name, shortdescription, etc
+    const keys=[`${element.id}`, `${element.name}`, 
+    `${element.shortDescription}`, `${element.description}`,
+    `${element.facts.genre}`, `${element.facts.albums}`, `${element.facts.artist}`];
+    let keysCompliadas="";
+      keys.forEach(key=>{  
+      const dt = document.createElement('dt');
+      const dd = document.createElement('dd');
+      dd.setAttribute('itemprop',`${key.element}`);
+      dd.innerHTML = [key];
+      //dt.appendChild(dd);
+      
+      keysCompliadas=(dt+dd);
+      dl.appendChild(keysCompliadas);
+      console.log(dl);
+    });
+    
+    
+    li.appendChild(dl);
+    liCompilados= li;
+    console.log(li);
+    
+  }
+
+  const div = document.createElement('div');
+  div.appendChild(ul);
+  return div;
+}
+
+const container = document.querySelector("#root");
+container.innerHTML = renderItems(data);
 
