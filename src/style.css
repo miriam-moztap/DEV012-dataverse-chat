@@ -206,4 +206,8 @@ h2 {
     footer {
         margin-right: -30px;
     }
+} 
+
+body {
+    background: linear-gradient(rgb(116, 16, 111), rgb(26, 57, 97), rgb(25, 25, 92), rgb(6, 17, 6));
 }

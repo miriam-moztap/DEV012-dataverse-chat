@@ -1,11 +1,13 @@
 export function renderItems(data) {
     const ul = document.createElement('ul');
+    ul.className='ulClass';
     let liCompilados="";
+    let datosTarjetas="";
       for (const element of data) {
     
         //elementos li
         let li=document.createElement('li');
-        li.className='tarjeta';
+        li.className='liClass';
         li.setAttribute('itemscope', '');
         li.setAttribute('itemtype', 'Artist');
         li.setAttribute('data-id', element.id);
@@ -17,41 +19,32 @@ export function renderItems(data) {
         dl.setAttribute('itemtype','Artist');
     
         //aquí se crea el elemento de la imagen y se anexa al elemento dl
-        const img = document.createElement('img');
-        img.className= 'image';
-        img.src = element.imageUrl;
-        img.alt='imagen';
-        dl.appendChild(img);
+        //const img = document.createElement('img');
+        //img.className= 'image';
+        //img.src = element.imageUrl;
+        //img.alt='imagen';
+        
         
     
-        //ahora crear los elementos dt y dd pero esto se hace para cada una de las claves de cada elemento. las claves son el id, name, shortdescription, etc
-        const keys=[`${element.id}`, `${element.name}`, 
-        `${element.shortDescription}`, `${element.description}`,
-        `${element.facts.genre}`, `${element.facts.albums}`, `${element.facts.artist}`];
-        //let keysCompliadasDt="";
-        //let keysCompiladasDd="";
-          keys.forEach(key=>{  
-          const dt = document.createElement('dt');
-          const dd = document.createElement('dd');
-          dd.setAttribute('itemprop',`${key.element}`);
-          dd.innerHTML = [key];
-          //dt.appendChild(dd);
-          //keysCompliadasDt=(dt);
-          //keysCompiladasDd=(dd);
-          dl.appendChild(dt);
-          dl.appendChild(dd);
-          
-        
-        });
-        
-        //console.log(dl);
+        datosTarjetas = `
+        <img class="imag" src="${element.imageUrl}" alt="imagen"/>
+        <dt><strong>Nombre:</strong></dt><dd itemprop="name">${element.name}</dd>
+      <dt><strong>Descripción:</strong></dt><dd itemprop="description">${element.shortDescription}</dd>
+      <dt><strong>Género:</strong></dt><dd itemprop="genre">${element.facts.genre}</dd>
+      <dt><strong>Número de Albumnes:</strong></dt><dd itemprop="albums">${element.facts.albums}</dd>
+      <dt><strong>Solista o grupo:</strong></dt><dd itemprop="artist">${element.facts.artist}</dd>
+        `  
+        dl.innerHTML=datosTarjetas;
         li.appendChild(dl);
         liCompilados= li;
+        ul.appendChild(liCompilados);
+        };
+      
         
-        ul.appendChild(li);
-        
+       
+        return ul;
       }
       
-      return ul;
-    }
+    
+    
     
