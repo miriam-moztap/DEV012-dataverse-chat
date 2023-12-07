@@ -17,13 +17,13 @@ TODO:
 2.- Pasar "root element" a router.
 3.- Invocar el router para renderizar la vista correcta.
 */
-import {Prueba} from './views/Home.js';
+import {PruebaHome} from './views/Home.js';
 // ... import other views
 import { setRootEl, setRoutes, onURLChange } from './router.js';
 
 // Define your routes and their associated views
 const routes = {
-  "/": Prueba,
+  "/": PruebaHome,
   "/error" : 'Hola',
 };
 
