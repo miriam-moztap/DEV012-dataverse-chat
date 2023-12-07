@@ -1,4 +1,4 @@
-import { computeStats, filterData } from "../dataFunctions.js";
+import { computeStats, filterData, sortData } from "../dataFunctions.js";
 import data from '/data/dataset.js';
 
 export const estructuraFiltro = () => {
@@ -37,7 +37,7 @@ export const estructuraFiltro = () => {
 };
 
 export const estructuraOrdemaniento = () =>{
-    const etiqueta = document.createElement("label");
+  const etiqueta = document.createElement("label");
   etiqueta.textContent = "Ordenar:";
   etiqueta.setAttribute("for", "ordenado");
   const orden = document.createElement("select");
@@ -66,29 +66,13 @@ export const estructuraOrdemaniento = () =>{
   return etiqueta;
 }
 
-export const estadistica = () =>{
+export const estadistica = (data) =>{
     const contenedorEstadistica = document.createElement('div');
-    let sumaData = '';
-   
-    //console.log(sumaData);
-    contenedorEstadistica.addEventListener('change', function (event) {
-        if(data){
-            sumaData = computeStats(data);
-        }else if(generos = filterData(data, "genre", event.target.value);
-        
-        let newData = generos;
-        sumaData = computeStats (newData);
-
-    ))}
-        
-
-contenedorEstadistica.innerHTML = `Total de Albums: ${sumaData}`;
-    console.log(contenedorEstadistica);
-    //const estadistica = document.createElement('div');
-    //estadistica.textContent = "Número de albumes:";
-    //estadistica.setAttribute('id', 'estadistica');
-}
-    
-
-    //return estadistica;
-}
+    const parrafoEstadística = document.createElement('p');
+    contenedorEstadistica.textContent= ("Total de álbums:");
+    let sumaData = computeStats(data);
+    parrafoEstadística.innerHTML= `Total de Albums: ${sumaData}`;
+    contenedorEstadistica.appendChild(parrafoEstadística);
+    return contenedorEstadistica;
+  };
+  
