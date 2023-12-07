@@ -1,3 +1,6 @@
+import { computeStats, filterData } from "../dataFunctions.js";
+import data from '/data/dataset.js';
+
 export const estructuraFiltro = () => {
   const etiqueta = document.createElement("label");
   etiqueta.textContent = "selecciona un género";
@@ -64,9 +67,28 @@ export const estructuraOrdemaniento = () =>{
 }
 
 export const estadistica = () =>{
-    const estadistica = document.createElement('div');
-    estadistica.textContent = "Número de albumes:";
-    estadistica.setAttribute('id', 'estadistica');
+    const contenedorEstadistica = document.createElement('div');
+    let sumaData = '';
+   
+    //console.log(sumaData);
+    contenedorEstadistica.addEventListener('change', function (event) {
+        if(data){
+            sumaData = computeStats(data);
+        }else if(generos = filterData(data, "genre", event.target.value);
+        
+        let newData = generos;
+        sumaData = computeStats (newData);
 
-    return estadistica;
+    ))}
+        
+
+contenedorEstadistica.innerHTML = `Total de Albums: ${sumaData}`;
+    console.log(contenedorEstadistica);
+    //const estadistica = document.createElement('div');
+    //estadistica.textContent = "Número de albumes:";
+    //estadistica.setAttribute('id', 'estadistica');
+}
+    
+
+    //return estadistica;
 }
