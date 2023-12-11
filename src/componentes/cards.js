@@ -6,7 +6,7 @@ export function renderItems(data) {
       for (const element of data) {
     
         //elementos li
-        let li=document.createElement('li');
+        let li = document.createElement('li');
         li.className='liClass';
         li.setAttribute('itemscope', '');
         li.setAttribute('itemtype', 'Artist');
@@ -34,9 +34,9 @@ export function renderItems(data) {
       <dt><strong>Número de Albumnes:</strong></dt><dd itemprop="albums">${element.facts.albums}</dd>
       <dt><strong>Solista o grupo:</strong></dt><dd itemprop="artist">${element.facts.artist}</dd>
         `  
-        dl.innerHTML=datosTarjetas;
+        dl.innerHTML = datosTarjetas;
         li.appendChild(dl);
-        liCompilados= li;
+        liCompilados = li;
         ul.appendChild(liCompilados);
         };
       

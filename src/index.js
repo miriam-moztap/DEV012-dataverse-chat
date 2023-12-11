@@ -20,10 +20,12 @@ TODO:
 import {PruebaHome} from './views/Home.js';
 // ... import other views
 import { setRootEl, setRoutes, onURLChange } from './router.js';
+import Clother from './views/Clother.js';
 
 // Define your routes and their associated views
 const routes = {
   "/": PruebaHome,
+  "/ropa": Clother,
   "/error" : 'Hola',
 };
 
