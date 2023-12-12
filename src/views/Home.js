@@ -12,20 +12,32 @@ export function PruebaHome(props) {
   const homeContenedor = document.createElement("div");
   homeContenedor.appendChild(header());
   homeContenedor.appendChild(estructuraFiltro());
-  homeContenedor.appendChild(estructuraOrdemaniento(data));
+  homeContenedor.appendChild(estructuraOrdemaniento());
 
+  //Contenedor de estadística
   const datosContados = estadistica(data);
   const contenedorDatosContados = document.createElement("div");
   contenedorDatosContados.appendChild(datosContados);
   homeContenedor.appendChild(contenedorDatosContados);
 
+  //Contenedor filtro
   const tarjetas = renderItems(data);
   const contenedorTarjetas = document.createElement("div");
   contenedorTarjetas.appendChild(tarjetas);
   homeContenedor.appendChild(contenedorTarjetas);
 
+  //pie de página
   homeContenedor.appendChild(pieDePagina());
 
+  //ordenado de todas las tarjetas
+  const contenedorDatosOrdenados = homeContenedor.querySelector("#ordenado");
+  contenedorDatosOrdenados.addEventListener("change", function (event) {
+    const ordenados = sortData(data, "name", event.target.value);
+    contenedorTarjetas.innerHTML = "";
+    contenedorTarjetas.appendChild(renderItems(ordenados));
+  });
+
+  //estructura de filtrado
   const contenedorFiltro = homeContenedor.querySelector("#genero");
   contenedorFiltro.addEventListener("change", function (event) {
     const generos = filterData(data, "genre", event.target.value);
@@ -35,20 +47,7 @@ export function PruebaHome(props) {
     //estas líneas son de la estadística
     contenedorDatosContados.innerHTML = "";
     contenedorDatosContados.appendChild(estadistica(generos));
-
-    //estas líneas son del ordenamiento
-
-    const contenedorDatosOrdenados = homeContenedor.querySelector("#ordenado");
-    contenedorDatosOrdenados.addEventListener("change", function (event) {
-      
-      const datosOrdenados = document.querySelector('div');
-      const ordenados = sortData(generos, "name", event.target.value);
-      datosOrdenados.innerHTML = ordenados;
-
-      contenedorTarjetas.innerHTML = '';
-      contenedorTarjetas.appendChild(datosOrdenados);
-
-    });
+    
   });
 
   return homeContenedor;
