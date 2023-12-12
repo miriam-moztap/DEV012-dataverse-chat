@@ -22,12 +22,13 @@ import {PruebaHome} from './views/Home.js';
 import { setRootEl, setRoutes, onURLChange } from './router.js';
 import Clother from './views/Clother.js';
 import { About } from './views/About.js';
+import { Error } from './views/Error.js';
 
 // Define your routes and their associated views
 const routes = {
   "/": PruebaHome,
   "/ropa": Clother,
-  "/error" : 'Hola',
+  "/error" : Error,
   "/about" : About,
 };
 
