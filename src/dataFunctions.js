@@ -1,6 +1,8 @@
 export const filterData = (data, filterBy, value) => {
+  
   const genroFiltrado = data.filter((item) => item.facts[filterBy] === value);
   return genroFiltrado;
+  
 };
 
 export const sortData = (data, sortBy, sortOrder) => {

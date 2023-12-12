@@ -4,7 +4,6 @@ export const estadistica = (data) => {
   const contenedorEstadistica = document.createElement("div");
   contenedorEstadistica.setAttribute("id", "conteo");
   const parrafoEstadística = document.createElement("p");
-  contenedorEstadistica.textContent = "Total de álbums:";
   let sumaData = computeStats(data);
   parrafoEstadística.innerHTML = `Total de Albums: ${sumaData}`;
   contenedorEstadistica.appendChild(parrafoEstadística);

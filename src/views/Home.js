@@ -5,14 +5,14 @@ import { pieDePagina } from "../componentes/footer.js";
 import { estructuraFiltro } from "../componentes/filtros.js";
 import { estadistica } from "../componentes/estadistica.js";
 import { filterData } from "../dataFunctions.js";
-import { estructuraOrdemaniento } from "../componentes/ordenamiento.js";
+import { estructuraOrdenamiento } from "../componentes/ordenamiento.js";
 import { sortData } from '../dataFunctions.js';
 
 export function PruebaHome(props) {
   const homeContenedor = document.createElement("div");
   homeContenedor.appendChild(header());
   homeContenedor.appendChild(estructuraFiltro());
-  homeContenedor.appendChild(estructuraOrdemaniento());
+  homeContenedor.appendChild(estructuraOrdenamiento());
 
   //Contenedor de estadística
   const datosContados = estadistica(data);
@@ -37,9 +37,12 @@ export function PruebaHome(props) {
     contenedorTarjetas.appendChild(renderItems(ordenados));
   });
 
-  //estructura de filtrado
   const contenedorFiltro = homeContenedor.querySelector("#genero");
   contenedorFiltro.addEventListener("change", function (event) {
+    //if(event.target.value==="Selecciona un género"){
+
+      //contenedorTarjetas.appendChild(tarjetas);
+    //}else if(event.target.value!=="Selecciona un género"){
     const generos = filterData(data, "genre", event.target.value);
     contenedorTarjetas.innerHTML = "";
     contenedorTarjetas.appendChild(renderItems(generos));
@@ -47,8 +50,18 @@ export function PruebaHome(props) {
     //estas líneas son de la estadística
     contenedorDatosContados.innerHTML = "";
     contenedorDatosContados.appendChild(estadistica(generos));
-    
-  });
+
+    //estas líneas son del ordenamiento
+
+    const contenedorDatosOrdenados = homeContenedor.querySelector("#ordenado");
+    contenedorDatosOrdenados.addEventListener("change", function (event) {
+      
+      const ordenados = sortData(generos, "name", event.target.value);
+      contenedorTarjetas.innerHTML = "";
+      contenedorTarjetas.appendChild(renderItems(ordenados));
+
+    });
+});
 
   return homeContenedor;
 }

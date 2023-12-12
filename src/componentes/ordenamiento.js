@@ -1,7 +1,7 @@
 import { PruebaHome } from '../views/Home.js';
 import { renderItems } from './cards.js';
 
-export const estructuraOrdemaniento = () => {
+export const estructuraOrdenamiento = () => {
     const etiqueta = document.createElement("label");
     etiqueta.textContent = "Ordenar:";
     etiqueta.setAttribute("for", "ordenado");
