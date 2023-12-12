@@ -12,7 +12,7 @@ export function PruebaHome(props) {
   const homeContenedor = document.createElement("div");
   homeContenedor.appendChild(header());
   homeContenedor.appendChild(estructuraFiltro());
-  homeContenedor.appendChild(estructuraOrdemaniento(data));
+  homeContenedor.appendChild(estructuraOrdemaniento());
 
   const datosContados = estadistica(data);
   const contenedorDatosContados = document.createElement("div");
@@ -25,7 +25,15 @@ export function PruebaHome(props) {
   homeContenedor.appendChild(contenedorTarjetas);
 
   homeContenedor.appendChild(pieDePagina());
+  
+  const contenedorDatosOrdenados = homeContenedor.querySelector("#ordenado");
+  contenedorDatosOrdenados.addEventListener("change", function (event) {
+    
+    const ordenados = sortData(generos, "name", event.target.value);
+    contenedorTarjetas.innerHTML = "";
+    contenedorTarjetas.appendChild(renderItems(ordenados));
 
+  });
   const contenedorFiltro = homeContenedor.querySelector("#genero");
   contenedorFiltro.addEventListener("change", function (event) {
     const generos = filterData(data, "genre", event.target.value);
@@ -41,12 +49,9 @@ export function PruebaHome(props) {
     const contenedorDatosOrdenados = homeContenedor.querySelector("#ordenado");
     contenedorDatosOrdenados.addEventListener("change", function (event) {
       
-      const datosOrdenados = document.querySelector('div');
       const ordenados = sortData(generos, "name", event.target.value);
-      datosOrdenados.innerHTML = ordenados;
-
-      contenedorTarjetas.innerHTML = '';
-      contenedorTarjetas.appendChild(datosOrdenados);
+      contenedorTarjetas.innerHTML = "";
+      contenedorTarjetas.appendChild(renderItems(ordenados));
 
     });
   });
