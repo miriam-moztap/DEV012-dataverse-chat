@@ -32,7 +32,7 @@ const renderView = (pathname, props= {}) => {
   // find the correct view in ROUTES for the pathname
   if(ROUTES[pathname]){
     const template = ROUTES[pathname]();
-    root.appendChild(template); 
+    root.appendChild(template);
 }else {
     root.appendChild(ROUTES['/error']());
 }

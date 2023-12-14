@@ -1,4 +1,5 @@
-export function Personaje(){
-    const contendorPersonaje= document.createElement('div');
-    
+
+export function Personaje () {
+const saludo = "hola";
+return saludo;
 }
