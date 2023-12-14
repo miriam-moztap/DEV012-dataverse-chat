@@ -9,7 +9,7 @@ export default [
       "https://raw.githubusercontent.com/Passitaz/DEV012-dataverse/main/Artistas/The%20Roling%20Stones.jpg",
     "facts": {
       "genre": "Rock",
-      "albums": 27,
+      "albums": "27",
       "artist": "Agrupación",
     },
     "extraInfo": {

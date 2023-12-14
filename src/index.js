@@ -30,7 +30,7 @@ const routes = {
   "/ropa": Clother,
   "/error" : Error,
   "/about" : About,
-  "/personaje": Personaje,
+  "/personaje": Personaje
 };
 
 const viewContainer = document.getElementById('root');
