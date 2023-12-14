@@ -18,7 +18,7 @@ TODO:
 3.- Invocar el router para renderizar la vista correcta.
 */
 import {PruebaHome} from './views/Home.js';
-// ... import other views
+import { Personaje } from './views/Personaje.js';
 import { setRootEl, setRoutes, onURLChange } from './router.js';
 import Clother from './views/Clother.js';
 import { About } from './views/About.js';
@@ -30,6 +30,7 @@ const routes = {
   "/ropa": Clother,
   "/error" : Error,
   "/about" : About,
+  "/personaje": Personaje,
 };
 
 const viewContainer = document.getElementById('root');
