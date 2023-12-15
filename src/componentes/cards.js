@@ -1,23 +1,25 @@
-import { navigateTo } from "../router.js";
+/* eslint-disable  */
+/* eslint-disable no-restricted-syntax */
+import { navigateTo } from '../router.js';
 
 export function renderItems(data) {
-  const ul = document.createElement("ul");
-  ul.className = "ulClass";
-  let liCompilados = "";
-  let datosTarjetas = "";
+  const ul = document.createElement('ul');
+  ul.className = 'ulClass';
+  let liCompilados = '';
+  let datosTarjetas = '';
   for (const element of data) {
-    //elementos li
-    let li = document.createElement("li");
-    li.className = "liClass";
-    li.setAttribute("itemscope", "");
-    li.setAttribute("itemtype", "Artist");
-    li.setAttribute("data-id", element.id);
+    // elementos li
+    const li = document.createElement('li');
+    li.className = 'liClass';
+    li.setAttribute('itemscope', '');
+    li.setAttribute('itemtype', 'Artist');
+    li.setAttribute('data-id', element.id);
 
-    //ahora, cada elemento li tiene un elemento dl que contiene a la imagen, el dt y el dd. Primero hacer el elemento dl
+    // ahora, cada elemento li tiene un elemento dl que contiene a la imagen, el dt y el dd. Primero hacer el elemento dl
 
-    const dl = document.createElement("dl");
-    dl.setAttribute("itemscope", "");
-    dl.setAttribute("itemtype", "Artist");
+    const dl = document.createElement('dl');
+    dl.setAttribute('itemscope', '');
+    dl.setAttribute('itemtype', 'Artist');
 
     datosTarjetas = `
       <img class="imag" src="${element.imageUrl}" alt="imagen"/>
@@ -32,18 +34,15 @@ export function renderItems(data) {
     liCompilados = li;
     ul.appendChild(liCompilados);
 
-    li.addEventListener("click", () => {
-      //console.log("Clic");
+    li.addEventListener('click', () => {
+      // console.log("Clic");
       const pathname = '/personaje'; // Reemplaza con tu pathname real
       const props = {
-        prop1: "",
-        prop2: ""
-      }
+        prop1: '',
+        prop2: '',
+      };
       navigateTo(pathname, props);
     });
-    };
-    return ul;
   }
-  
-
-
+  return ul;
+}
