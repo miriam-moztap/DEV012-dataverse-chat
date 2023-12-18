@@ -35,14 +35,17 @@ export function renderItems(data) {
     ul.appendChild(liCompilados);
 
     li.addEventListener('click', () => {
-      // console.log("Clic");
+      
       const pathname = '/personaje'; // Reemplaza con tu pathname real
       const props = {
-        prop1: '',
-        prop2: '',
+        name: element.name,
+        shortDescription: element.shortDescription,
+        imageUrl: element.imageUrl
+
       };
       navigateTo(pathname, props);
     });
   }
   return ul;
 }
+

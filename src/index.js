@@ -23,6 +23,7 @@ import { setRootEl, setRoutes, onURLChange } from './router.js';
 import Clother from './views/Clother.js';
 import { About } from './views/About.js';
 import { Error } from './views/Error.js';
+import { chatIndividual } from './views/ChatIndividual.js';
 
 // Define your routes and their associated views
 const routes = {
@@ -31,6 +32,7 @@ const routes = {
   '/error': Error,
   '/about': About,
   '/personaje': Personaje,
+  '/chat': chatIndividual,
 };
 
 const viewContainer = document.getElementById('root');
