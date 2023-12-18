@@ -24,6 +24,7 @@ import Clother from './views/Clother.js';
 import { About } from './views/About.js';
 import { Error } from './views/Error.js';
 import { chatIndividual } from './views/ChatIndividual.js';
+import { contenedorAPI  } from './views/Apikey.js';
 
 // Define your routes and their associated views
 const routes = {
@@ -33,6 +34,7 @@ const routes = {
   '/about': About,
   '/personaje': Personaje,
   '/chat': chatIndividual,
+  '/apikey': contenedorAPI,
 };
 
 const viewContainer = document.getElementById('root');
