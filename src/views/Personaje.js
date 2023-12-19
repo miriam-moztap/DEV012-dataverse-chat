@@ -1,5 +1,5 @@
 /* eslint-disable import/prefer-default-export */
-import { formulario } from '../componentes/formulario.js';
+import { botonHref } from '../componentes/botonhref.js';
 import { header } from '../componentes/header.js';
 import { pieDePagina } from '../componentes/footer.js';
 export function Personaje(props) {
@@ -7,7 +7,7 @@ export function Personaje(props) {
   const contenedorPersonaje = document.createElement('div');
   contenedorPersonaje.className = "contenedorPersonaje";
   contenedorPersonaje.appendChild(header());
-  contenedorPersonaje.appendChild(formulario());
+  contenedorPersonaje.appendChild(botonHref());
   const { name, shortDescription, imageUrl } = props;
   console.log(props);
   // Renderizamos nuevamente la información detallada
