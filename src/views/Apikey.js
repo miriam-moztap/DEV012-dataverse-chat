@@ -1,14 +1,18 @@
-import { ApiKey } from "../componentes/Apikey.js";
-import { boton } from "../componentes/boton.js";
+import { formulario } from "../componentes/formulario.js";
 
 export function contenedorAPI() {
 const contenedor = document.createElement('div');
-contenedor.appendChild(ApiKey());
-contenedor.appendChild(boton());
+contenedor.appendChild(formulario());
 
-const botonEnviar = contenedor.querySelector('.botonEnviar');
-botonEnviar.addEventListener('click', () =>{
+const formularioApi = contenedor.querySelector('#formApi');
+if(formularioApi){
+formularioApi.addEventListener('submit', async (e) =>{
+    e.preventDefault();
+    let textArea= contenedor.querySelector('.textAreaApi').value;
+    console.log(textArea);
 
 });
+
+}
 return contenedor;
 }

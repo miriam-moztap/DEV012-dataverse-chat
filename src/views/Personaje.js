@@ -1,5 +1,5 @@
 /* eslint-disable import/prefer-default-export */
-import { chat } from '../componentes/chatIndividual.js';
+import { formulario } from '../componentes/formulario.js';
 import { header } from '../componentes/header.js';
 import { pieDePagina } from '../componentes/footer.js';
 export function Personaje(props) {
@@ -7,7 +7,7 @@ export function Personaje(props) {
   const contenedorPersonaje = document.createElement('div');
   contenedorPersonaje.className = "contenedorPersonaje";
   contenedorPersonaje.appendChild(header());
-  contenedorPersonaje.appendChild(chat())
+  contenedorPersonaje.appendChild(formulario());
   const { name, shortDescription, imageUrl } = props;
   console.log(props);
   // Renderizamos nuevamente la información detallada
@@ -19,5 +19,14 @@ export function Personaje(props) {
   `;
   contenedorPersonaje.appendChild(detailElement)
   contenedorPersonaje.appendChild(pieDePagina());
+  const formularioApi = contenedorPersonaje.querySelector('#formApi');
+  if(formularioApi){
+  formularioApi.addEventListener('submit', async (e) =>{
+      e.preventDefault();
+      let textArea= contenedorPersonaje.querySelector('.textAreaApi').value;
+      console.log(textArea);
+    });
+
+  }
   return contenedorPersonaje;
 }
