@@ -8,11 +8,13 @@ import { filterData } from "../dataFunctions.js";
 import { estructuraOrdenamiento } from "../componentes/ordenamiento.js";
 import { sortData } from '../dataFunctions.js';
 
+
 export function PruebaHome(props) {
   const homeContenedor = document.createElement("div");
   homeContenedor.appendChild(header());
   homeContenedor.appendChild(estructuraFiltro());
   homeContenedor.appendChild(estructuraOrdenamiento());
+ 
 
   //Contenedor de estadística
   const datosContados = estadistica(data);
