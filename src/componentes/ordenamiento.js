@@ -3,7 +3,7 @@ import { renderItems } from './cards.js';
 
 export const estructuraOrdenamiento = () => {
   const etiqueta = document.createElement('label');
-  etiqueta.className = 'contenedorEstilo';
+  etiqueta.className = 'ordenamientoEst';
   etiqueta.textContent = 'Ordenar por: ';
   etiqueta.setAttribute('for', 'ordenado');
   const orden = document.createElement('select');

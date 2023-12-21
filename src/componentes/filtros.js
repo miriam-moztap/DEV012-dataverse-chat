@@ -5,7 +5,7 @@ import data from '../../../../../../../data/dataset.js';
 
 export const estructuraFiltro = () => {
   const etiqueta = document.createElement('label');
-  etiqueta.className = 'contenedorEstilo';
+  etiqueta.className = 'filtroEst';
   etiqueta.textContent = 'Selecciona un género: ';
   etiqueta.setAttribute('for', 'genero');
   const filtro = document.createElement('select');
