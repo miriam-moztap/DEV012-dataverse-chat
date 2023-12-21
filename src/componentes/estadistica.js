@@ -2,6 +2,7 @@ import { computeStats } from '../dataFunctions.js';
 
 export const estadistica = (data) => {
   const contenedorEstadistica = document.createElement('div');
+  contenedorEstadistica.className = 'contenedorEstilo';
   contenedorEstadistica.setAttribute('id', 'conteo');
   const parrafoEstadística = document.createElement('p');
   const sumaData = computeStats(data);
