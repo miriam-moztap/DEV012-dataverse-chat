@@ -7,7 +7,7 @@ export function chatindividual() {
   parrafo.className='parrafo';
   contenedorChat.appendChild(formulario());
   contenedorChat.appendChild(parrafo);
-  const API_KEY = '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'
+  const API_KEY = ''
   async function getCompletion(input) {
     const respuesta = await fetch('https://api.openai.com/v1/chat/completions',{
       method: 'POST',

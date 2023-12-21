@@ -2,7 +2,7 @@ export function formulario() {
   const form = document.createElement('form');
   form.setAttribute('id', 'formApi');
   const textArea = document.createElement('textarea');
-  textArea.placeholder = 'formulario'; // poner label
+  textArea.placeholder = 'Introduce la APIKey'; // poner label
   textArea.className = 'textAreaApi';
   const input = document.createElement('input');
   input.type = 'submit';
