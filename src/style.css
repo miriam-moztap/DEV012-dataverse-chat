@@ -1,64 +1,63 @@
 body {
-    background: linear-gradient(rgb(116, 16, 111), rgb(26, 57, 97), rgb(25, 25, 92), rgb(6, 17, 6));
+    background: #546099;
 }
 
 header{
     margin: 5px;;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contenedorEstilo{
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 20%;
+    
 }
 
 h1{
         column-span: all;
         font-family: system-ui;
-        color: rgb(55 192 235);
         font-size: 60px;
+        color:white,
+        
 
 }
 
-h2 {
-        column-span: all;
-        font-family: cursive;
-        color: rgb(236, 239, 240);
-        text-align: center;
-        font-size: 25px;
-}
-
-
-
-#imagen {
-    
-    width: 100%;
-    height: 50%;
-    text-align: center;
-}
-
-#imagen img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-}
-
-select {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-#estadistica{
+label{
     color: white;
+    font-family: 'verdana';
+   
+   
+    
+
+}
+select {
+  
+    font-family: 'verdana';
+    
+}
+
+#conteo{
+    color: white;
+    font-family: 'verdana';
+    
 }
 
 #filtros{
+
+
     display: flex;
     color: rgb(246, 246, 248);
     font-family: 'Courier New', Courier, monospace;
     font-size: 20px;
-}
-
-#tipo{
-    margin-left: 40px;
-}
-
-#tipo2{
-    margin-left: 80px;
-    margin-right: 150px;
 }
 
 .imag{
@@ -68,12 +67,18 @@ select {
 
 #root{
     display: flex;
+    
+    
 }
+
 
 .ulClass {
     display: flex;
     flex-wrap: wrap;
     list-style-type: none;
+   
+    align-self: stretch;
+    
 }
 
 .liClass {
@@ -92,8 +97,8 @@ select {
     background-color: rgb(253, 253, 250);
     text-align: center;    
     max-width: 400px;
-    flex-direction: row;
     flex-direction: column;
+    justify-content: right;
 }
 
 .liClass .imag{
@@ -215,5 +220,5 @@ h2 {
 } 
 
 body {
-    background: linear-gradient(rgb(116, 16, 111), rgb(26, 57, 97), rgb(25, 25, 92), rgb(6, 17, 6));
+    background: #546099;
 }
