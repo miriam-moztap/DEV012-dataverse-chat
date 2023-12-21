@@ -14,13 +14,14 @@ export function contenedorAPI() {
       const apiKeyValid = await validarApiKey(apiKey);
       if (apiKeyValid) {
         localStorage.setItem('chatGptApiKey', apiKey);
-        window.location.href = '/apikey';
+        window.location.href = '/chatindividual';
       } else {
         alert('Api Key incorrecta, inténtalo de nuevo');
       }
     });
-    async function validarApiKey(apiKey) {
-        return apiKey === 'vqTojGAMI5FHT25jh76ZT3BlbkFJjNTln8lp9J47rzkfU4zK';
+    async function hayApiKey(apiKey) {
+      localStorage.getItem(apiKey) //aquí tenemos que decirle que si hay una apikey que nos mande al chat, si no pos a la apikey
+        return apiKey === '';
     }
   }
   return contenedor;
