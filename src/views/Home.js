@@ -11,16 +11,18 @@ import { sortData } from '../dataFunctions.js';
 
 export function PruebaHome(props) {
   const homeContenedor = document.createElement("div");
+  const filtros=document.createElement('div');
+  filtros.className='filtros';
+  filtros.appendChild(estructuraFiltro());
+  filtros.appendChild(estructuraOrdenamiento());
+  const datosContados = estadistica(data);
+  filtros.appendChild(datosContados);
   homeContenedor.appendChild(header());
-  homeContenedor.appendChild(estructuraFiltro());
-  homeContenedor.appendChild(estructuraOrdenamiento());
+  homeContenedor.appendChild(filtros);
  
 
   //Contenedor de estadística
-  const datosContados = estadistica(data);
-  const contenedorDatosContados = document.createElement("div");
-  contenedorDatosContados.appendChild(datosContados);
-  homeContenedor.appendChild(contenedorDatosContados);
+  
 
   //Contenedor filtro
   const tarjetas = renderItems(data);
@@ -50,8 +52,8 @@ export function PruebaHome(props) {
     contenedorTarjetas.appendChild(renderItems(generos));
 
     //estas líneas son de la estadística
-    contenedorDatosContados.innerHTML = "";
-    contenedorDatosContados.appendChild(estadistica(generos));
+    datosContados.innerHTML = "";
+    datosContados.appendChild(estadistica(generos));
 
     //estas líneas son del ordenamiento
 
