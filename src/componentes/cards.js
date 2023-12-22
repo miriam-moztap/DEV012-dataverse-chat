@@ -35,7 +35,7 @@ export function renderItems(data) {
     ul.appendChild(liCompilados);
 
     li.addEventListener('click', () => {
-      
+      //si hay apikey decirle que vaya a esta vista, si no quer edireccione a la apikey
       const pathname = '/personaje'; // Reemplaza con tu pathname real
       const props = {
         name: element.name,
