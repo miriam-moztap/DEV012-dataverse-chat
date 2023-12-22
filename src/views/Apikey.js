@@ -1,5 +1,5 @@
 import { formulario } from '../componentes/formulario.js';
-
+//la función de fetch s etiene que generar dentro de lib, pasar ahí tamibén el data set y el data functions
 export function contenedorAPI() {
   const contenedor = document.createElement('div');
   contenedor.appendChild(formulario());
@@ -21,7 +21,7 @@ export function contenedorAPI() {
     });
     async function hayApiKey(apiKey) {
       localStorage.getItem(apiKey) //aquí tenemos que decirle que si hay una apikey que nos mande al chat, si no pos a la apikey
-        return apiKey === '';
+        return apiKey === 'aa';
     }
   }
   return contenedor;
