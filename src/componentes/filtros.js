@@ -1,8 +1,3 @@
-import { computeStats, filterData, sortData } from '../dataFunctions.js';
-import { PruebaHome } from '../views/Home.js';
-import { renderItems } from './cards.js';
-import data from '../../../../../../../data/dataset.js';
-
 export const estructuraFiltro = () => {
   const etiqueta = document.createElement('label');
   etiqueta.className = 'filtroEst';

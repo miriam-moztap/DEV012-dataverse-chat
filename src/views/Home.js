@@ -7,19 +7,24 @@ import { estadistica } from "../componentes/estadistica.js";
 import { filterData } from "../dataFunctions.js";
 import { estructuraOrdenamiento } from "../componentes/ordenamiento.js";
 import { sortData } from '../dataFunctions.js';
+import { botonLimpiar } from "../componentes/botonlimpiar.js";
 
 
 export function PruebaHome(props) {
   const homeContenedor = document.createElement("div");
   const filtros=document.createElement('div');
   filtros.className='filtros';
+  const botonLimpiado = document.createElement('div');
+  botonLimpiado.appendChild(botonLimpiar());
   filtros.appendChild(estructuraFiltro());
   filtros.appendChild(estructuraOrdenamiento());
+  filtros.appendChild(botonLimpiado);
   const datosContados = estadistica(data);
   filtros.appendChild(datosContados);
   homeContenedor.appendChild(header());
   homeContenedor.appendChild(filtros);
- 
+  
+  
 
   //Contenedor de estadística
   
@@ -32,6 +37,12 @@ export function PruebaHome(props) {
 
   //pie de página
   homeContenedor.appendChild(pieDePagina());
+
+  //botón para limpiar
+  botonLimpiado.addEventListener('click', function () {
+    contenedorTarjetas.innerHTML = "";
+    contenedorTarjetas.appendChild(renderItems(data)); 
+  });
 
   //ordenado de todas las tarjetas
   const contenedorDatosOrdenados = homeContenedor.querySelector("#ordenado");
@@ -66,6 +77,5 @@ export function PruebaHome(props) {
 
     });
 });
-
   return homeContenedor;
 }
