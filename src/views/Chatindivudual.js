@@ -1,6 +1,4 @@
 import { formulario } from '../componentes/formulario.js';
-
-
 export function chatindividual() {
   const contenedorChat = document.createElement('div');
   const parrafo = document.createElement('p');

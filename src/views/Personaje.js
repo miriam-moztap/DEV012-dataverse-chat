@@ -1,32 +1,38 @@
 /* eslint-disable import/prefer-default-export */
-import { botonHref } from '../componentes/botonhref.js';
 import { header } from '../componentes/header.js';
 import { pieDePagina } from '../componentes/footer.js';
+import { formulario } from '../componentes/formulario.js';
 export function Personaje(props) {
   // Accedemos a las propiedades
   const d = document;
   const contenedorPersonaje = d.createElement('div');
   contenedorPersonaje.className = "contenedorPersonaje";
-  const contenedorHome= d.createElement('section');
-  const contenedorBoton=d.createElement('section');
-  const contenedorFooter=d.createElement('div');
-  contenedorHome.appendChild(header());
-  contenedorBoton.appendChild(botonHref());
-  contenedorFooter.appendChild(pieDePagina());
-  contenedorPersonaje.appendChild(contenedorHome);
-  
+  contenedorPersonaje.appendChild(header());
+
+  //CONTENEDOR para almacenar el formulario y el los datos del personaje
+  const chatPersonaje = d.createElement('section');
+  chatPersonaje.className='chatPersonaje';
+
   const { name, shortDescription, imageUrl } = props;
   console.log(props);
   // Renderizamos nuevamente la información detallada
   const detailElement = d.createElement('div');
-  detailElement.innerHTML = `
+  detailElement.innerHTML = 
+  `<li class="li" itemscope itemtype="Artist">
     <h2>${name}</h2>
-    <img src="${imageUrl}" alt="${name}" />
+    <img class="imag" src="${imageUrl}" alt="imagen"/>
     <dt><strong>Descripción:</strong></dt><dd itemprop="description">${shortDescription}</dd>
-  `;
-  contenedorPersonaje.appendChild(detailElement);
-  contenedorPersonaje.appendChild(contenedorBoton);
-  contenedorPersonaje.appendChild(contenedorFooter);
+  </li>
+      `;
+  
+
+  chatPersonaje.appendChild(detailElement);
+  const contenedorFormulario = d.createElement('section');
+  contenedorFormulario.appendChild(formulario());
+  contenedorFormulario.className= 'formularioPersonaje';
+  chatPersonaje.appendChild(contenedorFormulario);
+  contenedorPersonaje.appendChild(chatPersonaje);
+  contenedorPersonaje.appendChild(pieDePagina());
 
   return contenedorPersonaje;
 }

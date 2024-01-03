@@ -14,7 +14,7 @@ header {
     font-size: 40px;
 }
 
-.botonLimpiar{
+.botonLimpiar {
     background-color: #fff;
     padding: 5px;
     margin: 10px;
@@ -40,27 +40,29 @@ header {
     background-size: cover;
 
 }
-.filtroEst{
+
+.filtroEst {
     padding: 15px;
 }
 
-.ordenamientoEst{
+.ordenamientoEst {
     padding: 15px;
 }
 
-.estadistica{
-    display: block; 
+.estadistica {
+    display: block;
 }
 
-select{
-    display: block; 
+select {
+    display: block;
     padding: 5px;
     margin-top: 10px;
 
 }
+
 h1 {
     column-span: all;
-    
+
     color: white,
 }
 
@@ -68,18 +70,19 @@ label {
     font-family: 'verdana';
 }
 
-select, #conteo {
+select,
+#conteo {
     font-family: 'verdana';
 }
 
-li dd{
-    display:inline
+li dd, .li dd {
+    display: inline
 }
 
 .imag {
     width: 200px;
     height: 200px;
-    
+
 }
 
 .ulClass {
@@ -109,26 +112,69 @@ li dd{
     width: 450px;
     flex-direction: column;
     column-count: 2;
+    list-style-type: none;
 }
 
+
+.li {    
+    box-sizing:border-box;
+    border-top: 7px solid #000;
+    border-right: 3px solid #000;
+    border-bottom: 3px solid #000;
+    border-left: 3px solid #000;
+    border-radius: 10px;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 27px;
+    margin-right: 10px;
+    background: url('./images/mostaza1.jpg');
+    background-size: cover;
+    text-align: center;
+    margin-left: 300px;
+    width: 450px;
+    list-style-type: none;
+}
+
+.chatPersonaje{
+    margin-top: 15px;
+    flex-direction: column;
+    column-count: 2;
+    align-items: center;
+}
 footer {
+    
     background-color: #333;
     color: #fff;
     padding: 1px;
     text-align: center;
+
+}
+.li .imag{
+    width: 350px;
+    height: 350px;
 }
 
-button {
-    background-color: darkgrey;
-}
-
-.boton {
-    padding: 10px;
+.formulario{
     display: flex;
     position: relative;
+    font-family: Courier, sans-serif;
+    margin-top: 500px;
+    height: 350px;
+    width: 800px;
+    resize: none;
 }
 
-
+.formularioApiKey{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+    font-family: Courier, sans-serif;
+    height: 350px;
+    width: 800px;
+    resize: none;
+   
+}
 
 @media screen and (max-width: 767px) {
 
