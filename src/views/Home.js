@@ -42,6 +42,10 @@ export function PruebaHome(props) {
   botonLimpiado.addEventListener('click', function () {
     contenedorTarjetas.innerHTML = "";
     contenedorTarjetas.appendChild(renderItems(data)); 
+    filtros.innerHTML = "";
+    filtros.appendChild(estructuraFiltro());
+  filtros.appendChild(estructuraOrdenamiento());
+  filtros.appendChild(estadistica(data));
   });
 
   //ordenado de todas las tarjetas
