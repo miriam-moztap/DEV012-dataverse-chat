@@ -1,29 +1,38 @@
 import { formularioApiKey } from "../componentes/formularioApi.js";
+import { header } from "../componentes/header.js";
+import { pieDePagina } from "../componentes/footer.js";
+
 //la función de fetch s etiene que generar dentro de lib, pasar ahí tamibén el data set y el data functions
 export function contenedorAPI() {
-  const contenedorAPI = document.createElement('div');
-  contenedorAPI.className= 'apiKey';
-  contenedorAPI.appendChild(formularioApiKey());
+  const contenedorAPI = document.createElement("div");
+  contenedorAPI.className = "apiKey";
+  const headerComponent = header();
+  headerComponent.className = "headerApi";
+  contenedorAPI.appendChild(headerComponent);
   
+  contenedorAPI.appendChild(formularioApiKey());
+  const footerApiKey = pieDePagina();
+  footerApiKey.className = "footerApi";
+  contenedorAPI.appendChild(footerApiKey);
 
-  const formularioApi = contenedorAPI.querySelector('#formApi');
+  const formularioApi = contenedorAPI.querySelector("#formApi");
   if (formularioApi) {
-    formularioApi.addEventListener('submit', async (e) => {
+    formularioApi.addEventListener("submit", async (e) => {
       e.preventDefault();
-      const apiKey = contenedorAPI.querySelector('.textAreaApi').value;
+      const apiKey = contenedorAPI.querySelector(".textAreaApi").value;
       console.log(apiKey);
 
       const apiKeyValid = await validarApiKey(apiKey);
       if (apiKeyValid) {
-        localStorage.setItem('chatGptApiKey', apiKey);
-        window.location.href = '/chatindividual';
+        localStorage.setItem("chatGptApiKey", apiKey);
+        window.location.href = "/chatindividual";
       } else {
-        alert('Api Key incorrecta, inténtalo de nuevo');
+        alert("Api Key incorrecta, inténtalo de nuevo");
       }
     });
     async function hayApiKey(apiKey) {
-      localStorage.getItem(apiKey) //aquí tenemos que decirle que si hay una apikey que nos mande al chat, si no pos a la apikey
-        return apiKey === 'aa';
+      localStorage.getItem(apiKey); //aquí tenemos que decirle que si hay una apikey que nos mande al chat, si no pos a la apikey
+      return apiKey === "aa";
     }
   }
   return contenedorAPI;

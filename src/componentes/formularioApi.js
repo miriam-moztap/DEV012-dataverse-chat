@@ -1,6 +1,6 @@
 export function formularioApiKey() {
     const form = document.createElement('form');
-    form.setAttribute('id', 'formApi');
+    form.setAttribute('id', 'formApiK');
     const textArea = document.createElement('textarea');
     textArea.placeholder = 'Introduce la APIKey'; // poner label
     textArea.className = 'formularioApiKey';

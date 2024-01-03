@@ -1,5 +1,10 @@
 export function Error () {
     const error = document.createElement('div');
-    error.textContent = 'Error 404';
+    error.className = "contenedorImagen"
+    const imagen = document.createElement('img');
+    imagen.className = "imagenError";
+    imagen.src = "componentes/error.jpg";
+    error.appendChild(imagen);
+
     return error;
 }
