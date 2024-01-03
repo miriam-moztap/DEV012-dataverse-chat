@@ -1,6 +1,3 @@
-import { PruebaHome } from '../views/Home.js';
-import { renderItems } from './cards.js';
-
 export const estructuraOrdenamiento = () => {
   const etiqueta = document.createElement('label');
   etiqueta.className = 'ordenamientoEst';
@@ -12,14 +9,17 @@ export const estructuraOrdenamiento = () => {
   orden.setAttribute('id', 'ordenado');
 
   const opcion1 = document.createElement('option');
+  opcion1.classList='orden';
   opcion1.setAttribute('value', 'blanco2');
   opcion1.textContent = 'Selecciona una opción';
 
   const opcion2 = document.createElement('option');
+  opcion1.classList='orden';
   opcion2.setAttribute('value', 'asc');
   opcion2.textContent = 'A - Z';
 
   const opcion3 = document.createElement('option');
+  opcion1.classList='orden';
   opcion3.setAttribute('value', 'desc');
   opcion3.textContent = 'Z - A';
 

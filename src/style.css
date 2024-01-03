@@ -14,6 +14,12 @@ header {
     font-size: 40px;
 }
 
+.botonLimpiar{
+    background-color: #fff;
+    padding: 5px;
+    margin: 10px;
+}
+
 .filtros {
     margin-left: 3%;
     color: #fff;
@@ -75,9 +81,6 @@ li dd{
     height: 200px;
     
 }
-
-
-
 
 .ulClass {
     display: flex;
