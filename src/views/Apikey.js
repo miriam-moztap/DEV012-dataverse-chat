@@ -1,14 +1,16 @@
-import { formulario } from '../componentes/formulario.js';
+import { formularioApiKey } from "../componentes/formularioApi.js";
 //la función de fetch s etiene que generar dentro de lib, pasar ahí tamibén el data set y el data functions
 export function contenedorAPI() {
-  const contenedor = document.createElement('div');
-  contenedor.appendChild(formulario());
+  const contenedorAPI = document.createElement('div');
+  contenedorAPI.className= 'apiKey';
+  contenedorAPI.appendChild(formularioApiKey());
+  
 
-  const formularioApi = contenedor.querySelector('#formApi');
+  const formularioApi = contenedorAPI.querySelector('#formApi');
   if (formularioApi) {
     formularioApi.addEventListener('submit', async (e) => {
       e.preventDefault();
-      const apiKey = contenedor.querySelector('.textAreaApi').value;
+      const apiKey = contenedorAPI.querySelector('.textAreaApi').value;
       console.log(apiKey);
 
       const apiKeyValid = await validarApiKey(apiKey);
@@ -24,5 +26,5 @@ export function contenedorAPI() {
         return apiKey === 'aa';
     }
   }
-  return contenedor;
+  return contenedorAPI;
 }
