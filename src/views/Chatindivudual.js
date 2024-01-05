@@ -1,9 +1,9 @@
-import { formulario } from '../componentes/formulario.js';
+import { chat } from '../componentes/formulario.js';
 export function chatindividual() {
   const contenedorChat = document.createElement('div');
   const parrafo = document.createElement('p');
   parrafo.className='parrafo';
-  contenedorChat.appendChild(formulario());
+  contenedorChat.appendChild(chat());
   contenedorChat.appendChild(parrafo);
   const API_KEY = ''
   async function getCompletion(input) {

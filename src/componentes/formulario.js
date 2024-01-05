@@ -1,14 +1,21 @@
-export function formulario() {
-  const form = document.createElement('form');
-  form.setAttribute('id', 'formApi');
+export function chat() {
+  const chat = document.createElement('div');
+  chat.className = 'chat';
+  chat.setAttribute('id', 'chat');
+  return chat;
+}
+
+export function formularioEnviar() {
+  const contMsj = document.createElement('div');
   const textArea = document.createElement('textarea');
-  textArea.placeholder = 'Escribe aquí tu mensaje'; // poner label
-  textArea.className = 'formulario';
-  const input = document.createElement('input');
-  input.type = 'submit';
-  input.className = 'botonEnviar';
-  input.value = 'Enviar';
-  form.appendChild(textArea);
-  form.appendChild(input);
-  return form;
+  textArea.placeholder = 'Escribe aquí tu mensaje';
+  textArea.className = 'textArea';
+  textArea.setAttribute('id', 'textArea');
+  const button = document.createElement('button');
+  button.className = 'botonEnviar';
+  button.setAttribute('id', 'botonEnviar');
+  button.textContent = 'Enviar';
+  contMsj.appendChild(textArea);
+  contMsj.appendChild(button);
+  return contMsj;
 }

@@ -31,7 +31,6 @@ const routes = {
   '/error': Error,
   '/personaje': Personaje,
   '/apikey': contenedorAPI,
-  '/chatindividual': chatindividual,
   '/chatgeneral': chatgeneral,
 };
 

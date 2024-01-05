@@ -1,4 +1,5 @@
-import { formulario } from "../componentes/formulario.js";
+import { chat } from "../componentes/formulario.js";
+import { formularioEnviar } from "../componentes/formulario.js";
 import { header } from "../componentes/header.js";
 import { pieDePagina } from "../componentes/footer.js";
 
@@ -6,7 +7,7 @@ export function chatgeneral() {
   const chatView = document.createElement("div");
   const cajaChatGeneral = document.createElement("div");
   cajaChatGeneral.className = "cajaChatGeneral";
-  cajaChatGeneral.appendChild(formulario());
+  cajaChatGeneral.appendChild(chat());
   const headerComponent = header();
   headerComponent.className = "headerChatGeneral";
   chatView.appendChild(headerComponent);
