@@ -47,7 +47,6 @@ export function Home(props) {
 
   //pie de página
   homeContenedor.appendChild(pieDePagina());
-
   //botón para limpiar
   botonLimpiado.addEventListener('click', function () {
     contenedorTarjetas.innerHTML = "";
@@ -57,6 +56,7 @@ export function Home(props) {
   filtros.appendChild(estructuraOrdenamiento());
   filtros.appendChild(estadistica(data));
   });
+
 
   //ordenado de todas las tarjetas
   const contenedorDatosOrdenados = homeContenedor.querySelector("#ordenado");

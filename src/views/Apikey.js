@@ -6,9 +6,13 @@ import { formularioEnviar } from "../componentes/formulario.js";
 export function contenedorAPI() {
   const contenedorAPI = document.createElement("div");
   contenedorAPI.className = "apiKey";
-  const headerComponent = header();
-  headerComponent.className = "headerApi";
-  contenedorAPI.appendChild(headerComponent);
+  
+  contenedorAPI.appendChild(header());
+  const apiTitulo = document.createElement('h1');
+  apiTitulo.textContent='API Key';
+  apiTitulo.className='apiTitulo';
+  contenedorAPI.appendChild(apiTitulo);
+
   
   contenedorAPI.appendChild(formularioEnviar());
   const footerApiKey = pieDePagina();
