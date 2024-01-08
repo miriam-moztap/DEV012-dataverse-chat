@@ -1,19 +1,16 @@
 /*diseño de la página de main*/
 
 body {
-  /*background: url("./images/azul3.jpg") no-repeat center center fixed;*/
-  background-color: #2874A6 ;
-  background-size: cover;
+  background-color: #2874A6;
 }
 
 header {
-  margin: 1px;
   color: #fff;
-  padding: 10px;
+  padding: 0px;
   display: flex;
   justify-content: center;
   align-items: center;
- font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 40px;
 }
 
@@ -195,8 +192,6 @@ div.contDetails {
   height: 450px;
   width: 800px;
   resize: none;
-  /*background: url("./images/azul4.jpg");
-  background-size: cover; */
   background-color: #da6e92;
   font-family: Courier, sans-serif;
   border-radius: 18px;
@@ -279,6 +274,30 @@ div.contDetails {
   resize: none;
 }
 
+/*codigo para dar formato a los íconos de navegación*/
+
+.iconos{
+  display: flex;
+  gap: 40px;
+  justify-content: right;
+  margin-right: 110px;
+  margin-top: 25px;
+}
+
+.iconHome, .iconChat{
+  color:#eec75c;
+  font-size: 45px;
+}
+.botonApiKey{
+  width: 150px;
+  border-radius: 10px;
+  font-size: 0.6cm;
+  font-weight: bold;
+  background-color: #e3cd93;
+
+
+}
+
 @media screen and (max-width: 767px) {/*codigo responsive para la página de HOME*/
   h1 {
     font-size: 30px;
@@ -346,6 +365,42 @@ div.contDetails {
   footer {
     margin-right: -30px;
   }
+
+  .filtros {
+    margin-left: 3%;
+    color: #fff;
+    font-size: medium;
+    font-weight: 300;
+    display: flex;
+    margin-top: 5px;
+    width: 15%;
+    flex-direction: column;
+    position: fixed;
+    border-radius: 10px;
+    align-items: center;
+    text-align: center;
+    /*background: url("./images/mostaza1.jpg");*/
+    background-color: #da6e92;
+    background-size: cover;
+  }
+  
+  .filtroEst {
+    padding: 15px;
+  }
+  
+  .ordenamientoEst {
+    padding: 15px;
+  }
+  
+  .estadistica {
+    display: block;
+  }
+  
+  select {
+    display: block;
+    padding: 5px;
+    margin-top: 10px;
+  }
 }
 
 @media screen and (max-width: 1040px) {/*codigo responsive para el chat individual y para chat general*/
@@ -397,5 +452,20 @@ div.contDetails .imag{
 }
 .footer{
   margin-top:100%;
+}
+
+/*codigo de imagen de error (responsive)*/
+.contenedorImagen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 55px;
+  margin-top: 200px;
+}
+
+.imagenError{
+    width: 300px;
+    height: auto;
 }
 }

@@ -8,20 +8,30 @@ import { filterData } from "../dataFunctions.js";
 import { estructuraOrdenamiento } from "../componentes/ordenamiento.js";
 import { sortData } from '../dataFunctions.js';
 import { botonLimpiar } from "../componentes/botonlimpiar.js";
+import { iconChat, iconHome } from "../componentes/iconos.js";
+import { botonApiKey } from "../componentes/botonhref.js";
 
 
-export function PruebaHome(props) {
-  const homeContenedor = document.createElement("div");
-  const filtros=document.createElement('div');
+export function Home(props) {
+  const d=document;
+  const homeContenedor = d.createElement("div");
+  const filtros=d.createElement('div');
   filtros.className='filtros';
-  const botonLimpiado = document.createElement('div');
+  const botonLimpiado = d.createElement('div');
   botonLimpiado.appendChild(botonLimpiar());
   filtros.appendChild(estructuraFiltro());
   filtros.appendChild(estructuraOrdenamiento());
   filtros.appendChild(botonLimpiado);
   const datosContados = estadistica(data);
   filtros.appendChild(datosContados);
+  const iconos = d.createElement('div');
+  iconos.className='iconos';
+  iconos.appendChild(iconHome())
+  iconos.appendChild(iconChat());
+  iconos.appendChild(botonApiKey());
+  homeContenedor.appendChild(iconos);
   homeContenedor.appendChild(header());
+  
   homeContenedor.appendChild(filtros);
   
   
@@ -31,7 +41,7 @@ export function PruebaHome(props) {
 
   //Contenedor filtro
   const tarjetas = renderItems(data);
-  const contenedorTarjetas = document.createElement("div");
+  const contenedorTarjetas = d.createElement("div");
   contenedorTarjetas.appendChild(tarjetas);
   homeContenedor.appendChild(contenedorTarjetas);
 
