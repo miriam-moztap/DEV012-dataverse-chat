@@ -1,65 +1,85 @@
+import { renderItems } from "../componentes/cards.js";
+import { header } from "../componentes/header.js";
+import data from "/data/dataset.js";
+import { pieDePagina } from "../componentes/footer.js";
+import { estructuraFiltro } from "../componentes/filtros.js";
+import { estadistica } from "../componentes/estadistica.js";
+import { filterData } from "../dataFunctions.js";
+import { estructuraOrdenamiento } from "../componentes/ordenamiento.js";
+import { sortData } from '../dataFunctions.js';
+import { botonLimpiar } from "../componentes/botonlimpiar.js";
 
-import { renderItems } from '../componentes/cards.js';
-import { header } from '../componentes/header.js';
-import data from '/data/dataset.js';
-import { pieDePagina } from '../componentes/footer.js';
-import { estadistica, estructuraFiltro, estructuraOrdemaniento } from '../componentes/filtros.js';
-import { filterData, sortData, computeStats } from '../dataFunctions.js';
-// src/views/Home.js
 
 export function PruebaHome(props) {
-  const homeContenedor = document.createElement('div');
+  const homeContenedor = document.createElement("div");
+  const filtros=document.createElement('div');
+  filtros.className='filtros';
+  const botonLimpiado = document.createElement('div');
+  botonLimpiado.appendChild(botonLimpiar());
+  filtros.appendChild(estructuraFiltro());
+  filtros.appendChild(estructuraOrdenamiento());
+  filtros.appendChild(botonLimpiado);
+  const datosContados = estadistica(data);
+  filtros.appendChild(datosContados);
   homeContenedor.appendChild(header());
-  homeContenedor.appendChild(estructuraFiltro());
-  homeContenedor.appendChild(estructuraOrdemaniento());
-  homeContenedor.appendChild(estadistica());
-  homeContenedor.appendChild(renderItems(data));
+  homeContenedor.appendChild(filtros);
+  
+  
+
+  //Contenedor de estadística
+  
+
+  //Contenedor filtro
+  const tarjetas = renderItems(data);
+  const contenedorTarjetas = document.createElement("div");
+  contenedorTarjetas.appendChild(tarjetas);
+  homeContenedor.appendChild(contenedorTarjetas);
+
+  //pie de página
   homeContenedor.appendChild(pieDePagina());
 
+  //botón para limpiar
+  botonLimpiado.addEventListener('click', function () {
+    contenedorTarjetas.innerHTML = "";
+    contenedorTarjetas.appendChild(renderItems(data)); 
+    filtros.innerHTML = "";
+    filtros.appendChild(estructuraFiltro());
+  filtros.appendChild(estructuraOrdenamiento());
+  filtros.appendChild(estadistica(data));
+  });
 
-    const contenedorFiltro = document.getElementById("root");
+  //ordenado de todas las tarjetas
+  const contenedorDatosOrdenados = homeContenedor.querySelector("#ordenado");
+  contenedorDatosOrdenados.addEventListener("change", function (event) {
+    const ordenados = sortData(data, "name", event.target.value);
+    contenedorTarjetas.innerHTML = "";
+    contenedorTarjetas.appendChild(renderItems(ordenados));
+  });
 
-    contenedorFiltro.addEventListener('change', function (event) {
-      const generos = filterData(data, "genre", event.target.value);
-      let newData = generos;
-    
-      //Estadistica
+  const contenedorFiltro = homeContenedor.querySelector("#genero");
+  contenedorFiltro.addEventListener("change", function (event) {
+    //if(event.target.value==="Selecciona un género"){
 
-//const sumaData = computeStats(newData);
-//estadistica.innerHTML = `Total de Albums: ${sumaData}`;
-  //  console.log(estadistica);
+      //contenedorTarjetas.appendChild(tarjetas);
+    //}else if(event.target.value!=="Selecciona un género"){
+    const generos = filterData(data, "genre", event.target.value);
+    contenedorTarjetas.innerHTML = "";
+    contenedorTarjetas.appendChild(renderItems(generos));
 
-      // Eliminar todos los nodos hijos actuales del contenedor
-      while (contenedorFiltro.firstChild) {
-        contenedorFiltro.removeChild(contenedorFiltro.firstChild);
-      }
-    
+    //estas líneas son de la estadística
+    datosContados.innerHTML = "";
+    datosContados.appendChild(estadistica(generos));
 
-      // Renderizar y agregar nuevos elementos al contenedor
-      const nuevosElementos = renderItems(newData);
-      contenedorFiltro.className = 'ulClass';
-     contenedorFiltro.appendChild(header());
-     contenedorFiltro.appendChild(estructuraFiltro());
-     contenedorFiltro.appendChild(estructuraOrdemaniento());
-     contenedorFiltro.appendChild(estadistica());
-     
+    //estas líneas son del ordenamiento
 
-        contenedorFiltro.appendChild(nuevosElementos);
-        contenedorFiltro.appendChild(pieDePagina());
+    const contenedorDatosOrdenados = homeContenedor.querySelector("#ordenado");
+    contenedorDatosOrdenados.addEventListener("change", function (event) {
+      
+      const ordenados = sortData(generos, "name", event.target.value);
+      contenedorTarjetas.innerHTML = "";
+      contenedorTarjetas.appendChild(renderItems(ordenados));
 
-    return contenedorFiltro;
-
-
-    
     });
-
-
+});
   return homeContenedor;
 }
-
-
-
-
-
-
-

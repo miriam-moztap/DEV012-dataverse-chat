@@ -17,14 +17,21 @@ TODO:
 2.- Pasar "root element" a router.
 3.- Invocar el router para renderizar la vista correcta.
 */
-import {PruebaHome} from './views/Home.js';
-// ... import other views
+import { PruebaHome } from './views/Home.js';
+import { Personaje } from './views/Personaje.js';
 import { setRootEl, setRoutes, onURLChange } from './router.js';
+import { Error } from './views/Error.js';
+import { contenedorAPI } from './views/Apikey.js';
+import { chatindividual } from './views/Chatindivudual.js';
+import { chatgeneral } from './views/Chatgeneral.js';
 
 // Define your routes and their associated views
 const routes = {
-  "/": PruebaHome,
-  "/error" : 'Hola',
+  '/': PruebaHome,
+  '/error': Error,
+  '/personaje': Personaje,
+  '/apikey': contenedorAPI,
+  '/chatgeneral': chatgeneral,
 };
 
 const viewContainer = document.getElementById('root');
@@ -34,11 +41,8 @@ setRoutes(routes);
 
 setRootEl(viewContainer);
 
-
 // Set the root element where views will be rendered
-document.addEventListener("DOMContentLoaded", (event) => {
+document.addEventListener('DOMContentLoaded', (event) => {
   onURLChange(event.target.location.pathname);
-    
 });
 window.onpopstate = onURLChange;
-
