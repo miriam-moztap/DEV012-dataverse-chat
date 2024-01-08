@@ -217,10 +217,18 @@ div.contDetails {
   margin-top: 1cm;
   margin-left: 1cm;
 }
-.footerChatGeneral {
-  position: relative;
-  top: -180px;
+
+/*Diseño para vista de Chat General*/
+.cajaPrincipalChatG{
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    justify-content: center;
+    margin: auto;
+
 }
+
+/*Diseño vista Error*/
 
 .contenedorImagen {
   display: flex;
@@ -239,24 +247,16 @@ div.contDetails {
   font-size: medium;
 }
 
-
-#formApiK{
+.apiKey{
+    text-align: center;
     display: flex;
+    flex-direction: column;
+    place-items: center;
     justify-content: center;
-    align-items: center;
-    
+    margin-top: 200px;
+  
 }
 
-.formularioApiKey{
-    display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #eec75c;
-  border: 3px solid #1215ca;
-  width: 10%;
-  height: 100px
-   
-}
 
 .footerApi{
     position: relative;
@@ -403,7 +403,7 @@ div.contDetails {
   }
 }
 
-@media screen and (max-width: 1040px) {/*codigo responsive para el chat individual*/
+@media screen and (max-width: 1040px) {/*codigo responsive para el chat individual y para chat general*/
   .chatPersonaje {
     display: flex;
     justify-items: center;

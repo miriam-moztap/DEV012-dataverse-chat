@@ -5,15 +5,15 @@ import { pieDePagina } from "../componentes/footer.js";
 
 export function chatgeneral() {
   const chatView = document.createElement("div");
-  const cajaChatGeneral = document.createElement("div");
-  cajaChatGeneral.className = "cajaChatGeneral";
-  cajaChatGeneral.appendChild(chat());
-  const headerComponent = header();
-  headerComponent.className = "headerChatGeneral";
-  chatView.appendChild(headerComponent);
-  chatView.appendChild(cajaChatGeneral);
-  const footerChatGeneral = pieDePagina();
-  footerChatGeneral.className = "footerChatGeneral";
-  chatView.appendChild(footerChatGeneral);
+  chatView.appendChild(header());
+
+  const cajaPrincipal = document.createElement('div');
+  cajaPrincipal.className = 'cajaPrincipalChatG';
+  cajaPrincipal.appendChild(chat());
+  cajaPrincipal.appendChild(formularioEnviar());
+  chatView.appendChild(cajaPrincipal);
+
+  chatView.appendChild(pieDePagina());
+
   return chatView;
 }
