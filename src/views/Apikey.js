@@ -1,6 +1,6 @@
-import { formularioApiKey } from "../componentes/formularioApi.js";
 import { header } from "../componentes/header.js";
 import { pieDePagina } from "../componentes/footer.js";
+import { formularioEnviar } from "../componentes/formulario.js";
 
 //la función de fetch s etiene que generar dentro de lib, pasar ahí tamibén el data set y el data functions
 export function contenedorAPI() {
@@ -10,7 +10,7 @@ export function contenedorAPI() {
   headerComponent.className = "headerApi";
   contenedorAPI.appendChild(headerComponent);
   
-  contenedorAPI.appendChild(formularioApiKey());
+  contenedorAPI.appendChild(formularioEnviar());
   const footerApiKey = pieDePagina();
   footerApiKey.className = "footerApi";
   contenedorAPI.appendChild(footerApiKey);
