@@ -2,6 +2,7 @@
 
 body {
   background-color: #2874A6;
+
 }
 
 header {
@@ -14,7 +15,8 @@ header {
   font-size: 40px;
 }
 
-.botonLimpiar, .botonEnviar {
+.botonLimpiar,
+.botonEnviar {
   background-color: #fff;
   padding: 5px;
   margin: 10px;
@@ -73,8 +75,12 @@ select,
 
 li dd,
 .li dd {
-  display: inline;
-  color:#222323;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  margin: 5px;
+  color: #222323;
+  
 }
 
 .imag {
@@ -107,7 +113,7 @@ li dd,
   flex-direction: column;
   column-count: 2;
   list-style-type: none;
-  
+
 }
 
 footer {
@@ -135,23 +141,23 @@ footer {
 
 
 /*diseño de la imagen del chat individual*/
-.contPer{
+.contPer {
   margin: auto;
 }
 
 div.contDetails {
   /*este contenedor contiene la imagen y el elemento li de los datos del personaje para poder hacerlo responsive*/
-  display:flex;
-  margin:auto;
+  display: flex;
+  margin: auto;
   border-radius: 10px;
   padding: 20px;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 27px;
   /*background: url("./images/mostaza1.jpg");*/
-  background-color:  #f2c343;
+  background-color: #f2c343;
   background-size: cover;
   text-align: center;
-  flex-direction:column;
+  flex-direction: column;
   width: 450px;
   list-style-type: none;
 }
@@ -160,71 +166,80 @@ div.contDetails {
   width: 350px;
   height: 350px;
 }
+
 /*diseño chat individual dentro de la vista del personaje*/
 .chatPersonaje {
   margin-top: 15px;
   flex-direction: column;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 10px;
+  gap: 0px;
   justify-content: center;
   border-right-color: 10px #fff;
   margin-left: auto;
 }
 
 
-.botonEnviar{
+.botonEnviar {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left:35%;
+  margin: auto;
   background-color: #f7793e;
   height: 45px;
   width: 3cm;
   font-size: 0.5cm;
   border-radius: 10px 90px / 120px;
-  
+  margin-top: 25px;
+
 }
-.chat{
+
+.chat {
   display: flex;
-  overflow-x:hidden;
-  overflow-y:visible;
+  justify-content: center;
+  margin: auto;
+  overflow-x: hidden;
+  overflow-y: visible;
   height: 450px;
   width: 800px;
   resize: none;
   background-color: #da6e92;
   font-family: Courier, sans-serif;
   border-radius: 18px;
-  color:#fff;
+  color: #fff;
   font-size: 0.6cm;
   font-weight: bold;
 }
 
 .textArea {
   display: flex;
+  justify-content: center;
+  margin: auto;
   font-family: Courier, sans-serif;
   font-size: larger;
   margin-top: 10px;
   height: 50px;
   width: 795px;
   resize: none;
-  background-color: #2d405a; 
+  background-color: #2d405a;
   border-radius: 10px;
-  color:#fff;
+  color: #fff;
   font-size: 0.7;
 }
-.mensaje{
+
+.mensaje {
   margin-top: 1cm;
   margin-left: 1cm;
 }
 
 /*Diseño para vista de Chat General*/
-.cajaPrincipalChatG{
-    display: flex;
-    flex-direction: column;
-    place-items: center;
-    justify-content: center;
-    margin: auto;
+
+.cajaPrincipalChatG {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  justify-content: center;
+  margin: auto;
 
 }
 
@@ -238,29 +253,31 @@ div.contDetails {
   top: 55px;
 }
 
-.imagenError{
-    width: 550px;
-    height: auto;
+.imagenError {
+  width: 550px;
+  height: auto;
 }
-.headerApi{
+
+.apiTitulo {
   margin-top: 5px;
-  font-size: medium;
+  font-size: 1cm;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.apiKey{
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    place-items: center;
-    justify-content: center;
-    margin-top: 200px;
-  
+.apiKey {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  justify-content: center;
+  margin-top: 200px;
+
 }
 
 
-.footerApi{
-    position: relative;
-    top: 100px
+.footerApi {
+  position: relative;
+  top: 100px
 }
 
 .formularioApiKey {
@@ -276,7 +293,7 @@ div.contDetails {
 
 /*codigo para dar formato a los íconos de navegación*/
 
-.iconos{
+.iconos {
   display: flex;
   gap: 40px;
   justify-content: right;
@@ -284,11 +301,13 @@ div.contDetails {
   margin-top: 25px;
 }
 
-.iconHome, .iconChat{
-  color:#eec75c;
+.iconHome,
+.iconChat {
+  color: #eec75c;
   font-size: 45px;
 }
-.botonApiKey{
+
+.botonApiKey {
   width: 150px;
   border-radius: 10px;
   font-size: 0.6cm;
@@ -298,64 +317,58 @@ div.contDetails {
 
 }
 
-@media screen and (max-width: 767px) {/*codigo responsive para la página de HOME*/
+@media screen and (max-width: 767px) {
+
+  /*codigo responsive para la página de HOME*/
+  body{
+    margin:auto;
+
+  }
   h1 {
     font-size: 30px;
-  }
-
-  h2 {
-    font-size: 12px;
-  }
-
-  #imagen img {
-    width: 110%;
-    height: 50px;
-    margin-right: 10px;
+    margin-left: 30px;
   }
 
   .imag {
     width: 90px;
     height: 90px;
-  }
-
-  select {
-    font-size: 8px;
-  }
-
-  #filtros {
-    font-size: 12px;
-  }
-
-  #tipo {
-    margin-left: 10px;
-  }
-
-  #tipo2 {
-    margin-left: 30px;
-    margin-right: 90px;
-  }
-
-  button {
-    font-size: 7px;
+    justify-content: center;
+    
   }
 
   .liClass {
-    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+    margin: auto;
     font-size: small;
-    margin-bottom: 8px;
-    margin-right: 8px;
+    margin-bottom: 12px;
+    width: 4.5cm;
+    height: 6.3cm;
+  }
+
+  .ulClass {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap:10px;
+    position: relative;
+    justify-content: center;
+    margin: auto;
+    margin-top: 0.5cm;
   }
 
   .liClass dt {
-    line-height: 1.5;
     font-size: 10px;
     margin-left: 15px;
+    margin-top: 2px;
+    margin: auto;
   }
 
   .liClass dd {
     margin-bottom: 5px;
     font-size: 9px;
-    margin-left: 8px;
+    margin: auto;
   }
 
   #estadistica {
@@ -367,105 +380,115 @@ div.contDetails {
   }
 
   .filtros {
-    margin-left: 3%;
-    color: #fff;
-    font-size: medium;
-    font-weight: 300;
     display: flex;
-    margin-top: 5px;
-    width: 15%;
-    flex-direction: column;
-    position: fixed;
-    border-radius: 10px;
-    align-items: center;
-    text-align: center;
-    /*background: url("./images/mostaza1.jpg");*/
-    background-color: #da6e92;
-    background-size: cover;
+    justify-self: center;
+    position: relative;
+    margin: auto;
+    margin-left: 130px;
+    height: 5cm;
+    width: 5cm;
+    font-size: small;
+    font-weight: bold;
   }
-  
-  .filtroEst {
-    padding: 15px;
-  }
-  
+
+  .filtroEst,
   .ordenamientoEst {
-    padding: 15px;
-  }
-  
-  .estadistica {
-    display: block;
-  }
-  
-  select {
-    display: block;
     padding: 5px;
-    margin-top: 10px;
+    font-size: small;
+  }
+
+  .estadistica {
+    display: flex;
+    
+  }
+
+  select {
+    display: flex;
+    padding: 1px;
+    margin-top: 5px;
+    font-size: small;
   }
 }
+.iconos {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  margin: auto;
+  margin-top: 25px;
+  margin-left: 30px;
+}
 
-@media screen and (max-width: 1040px) {/*codigo responsive para el chat individual y para chat general*/
+@media screen and (max-width: 1040px) {
+
+  /*codigo responsive para el chat individual y para chat general*/
   .chatPersonaje {
     display: flex;
     justify-items: center;
     margin-top: 15px;
     flex-direction: column;
-    column-count:1;
-}
-div.contDetails{
-  display: flex;
-  justify-content: center;
-  margin: auto;
-  width: 200px;
-  height: 250px;
-  font-size: small;
-}
-div.contDetails .imag{
-  width: 175px;
-  height: 175px;
-}
-.chat{
-  display: flex;
-  margin:auto;
-  margin-top: 5%;
-  overflow-x:hidden;
-  overflow-y: auto;
-  height: 180px;
-  width: 320px;
-  resize: none;  
-}
-.textArea{
-  display: flex;
-  margin:auto;
-  margin-top: 5%;
-  height: 35px;
-  width: 316px;
-  resize: none;
-}
-.botonEnviar{
-  display: flex;
-  margin:auto;
-  margin-top: 5%;
-  font-size: large;
-  justify-content: center;
-  height: 40px;
-  width: 80px;
-}
-.footer{
-  margin-top:100%;
-}
+    column-count: 1;
+  }
 
-/*codigo de imagen de error (responsive)*/
-.contenedorImagen {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  top: 55px;
-  margin-top: 200px;
-}
+  div.contDetails {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    width: 200px;
+    height: 250px;
+    font-size: small;
+  }
 
-.imagenError{
+  div.contDetails .imag {
+    width: 175px;
+    height: 175px;
+  }
+
+  .chat {
+    display: flex;
+  align-items: left;
+    margin-top: 5%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 180px;
+    width: 320px;
+    resize: none;
+  }
+
+  .textArea {
+    display: flex;
+    margin: auto;
+    margin-top: 5%;
+    height: 35px;
+    width: 316px;
+    resize: none;
+  }
+
+  .botonEnviar {
+    display: flex;
+    margin: auto;
+    margin-top: 5%;
+    font-size: large;
+    justify-content: center;
+    height: 40px;
+    width: 80px;
+  }
+
+  .footer {
+    margin-top: 100%;
+  }
+
+  /*codigo de imagen de error (responsive)*/
+  .contenedorImagen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 55px;
+    margin-top: 200px;
+  }
+
+  .imagenError {
     width: 300px;
     height: auto;
-}
+  }
 }
