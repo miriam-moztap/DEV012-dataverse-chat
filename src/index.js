@@ -17,7 +17,7 @@ TODO:
 2.- Pasar "root element" a router.
 3.- Invocar el router para renderizar la vista correcta.
 */
-import { PruebaHome } from './views/Home.js';
+import { Home } from './views/Home.js';
 import { Personaje } from './views/Personaje.js';
 import { setRootEl, setRoutes, onURLChange } from './router.js';
 import { Error } from './views/Error.js';
@@ -27,7 +27,7 @@ import { chatgeneral } from './views/Chatgeneral.js';
 
 // Define your routes and their associated views
 const routes = {
-  '/': PruebaHome,
+  '/': Home,
   '/error': Error,
   '/personaje': Personaje,
   '/apikey': contenedorAPI,

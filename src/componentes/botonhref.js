@@ -1,6 +1,7 @@
-export function botonHref(){
+export function botonApiKey(){
     const button = document.createElement('button');
-    button.textContent='Introduce tu API Key para chatear conmigo';
+    button.textContent='API Key';
+    button.className='botonApiKey';
 
     // Agregar un evento de clic al botón
     button.addEventListener('click', function () {
