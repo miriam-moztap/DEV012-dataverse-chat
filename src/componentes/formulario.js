@@ -8,7 +8,7 @@ export function chat() {
 export function formularioEnviar() {
   const contMsj = document.createElement('div');
   const textArea = document.createElement('textarea');
-  textArea.placeholder = 'Escribe aquí tu mensaje';
+  textArea.placeholder = 'Escribe aquí...';
   textArea.className = 'textArea';
   textArea.setAttribute('id', 'textArea');
   const button = document.createElement('button');
