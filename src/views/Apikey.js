@@ -22,9 +22,7 @@ contenedorAPI.appendChild(contenedorIconoApi);
 
   
   contenedorAPI.appendChild(formularioEnviar());
-  const footerApiKey = pieDePagina();
-  footerApiKey.className = "footerApi";
-  contenedorAPI.appendChild(footerApiKey);
+  contenedorAPI.appendChild(pieDePagina());
 
   const formularioApi = contenedorAPI.querySelector("#formApi");
   if (formularioApi) {
