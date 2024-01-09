@@ -2,10 +2,15 @@ import { chat } from "../componentes/formulario.js";
 import { formularioEnviar } from "../componentes/formulario.js";
 import { header } from "../componentes/header.js";
 import { pieDePagina } from "../componentes/footer.js";
+import { iconHome } from "../componentes/iconos.js";
 
 export function chatgeneral() {
   const d = document;
   const chatView = d.createElement("div");
+  const iconoChatGeneral = document.createElement ('div');
+  iconoChatGeneral.className = "IconoChatGeneral";
+  iconoChatGeneral.appendChild(iconHome());
+  chatView.appendChild(iconoChatGeneral);
   chatView.appendChild(header());
 
   const cajaPrincipal = d.createElement('div');

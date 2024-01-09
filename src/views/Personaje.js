@@ -3,11 +3,19 @@ import { header } from '../componentes/header.js';
 import { pieDePagina } from '../componentes/footer.js';
 import { chat } from '../componentes/formulario.js';
 import { formularioEnviar } from '../componentes/formulario.js';
+import { iconHome } from '../componentes/iconos.js';
+import { iconChat } from "../componentes/iconos.js";
+
 export function Personaje(props) {
   // Accedemos a las propiedades
   const d = document;
   const contPer = d.createElement('div');
   contPer.className = "contPer";
+  const iconoChatIndividual = document.createElement('div');
+  iconoChatIndividual.className = "iconosChatIndividual";
+  iconoChatIndividual.appendChild(iconHome());
+  iconoChatIndividual.appendChild(iconChat());
+  contPer.appendChild(iconoChatIndividual);
   contPer.appendChild(header());
 
   //CONTENEDOR para almacenar el formulario y el los datos del personaje
@@ -35,8 +43,10 @@ export function Personaje(props) {
   contChat.appendChild(formularioEnviar());
   chatPersonaje.appendChild(contChat);
   contPer.appendChild(chatPersonaje);
-  contPer.appendChild(pieDePagina());
-
+  const piePersonaje = document.createElement('div');
+  piePersonaje.className = "pieChatIndividual";
+  piePersonaje.appendChild(pieDePagina());
+  contPer.appendChild(piePersonaje);
 
   //funcionalidad para enviar el mensaje escrito en el text área a la zona de chat
   const textArea = contPer.querySelector('#textArea');

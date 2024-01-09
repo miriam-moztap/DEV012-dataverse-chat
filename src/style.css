@@ -239,8 +239,7 @@ div.contDetails {
   flex-direction: column;
   place-items: center;
   justify-content: center;
-  margin: auto;
-
+  
 }
 
 /*Diseño vista Error*/
@@ -274,7 +273,6 @@ div.contDetails {
 
 }
 
-
 .footerApi {
   position: relative;
   top: 100px
@@ -291,6 +289,11 @@ div.contDetails {
   resize: none;
 }
 
+/*footer Chat Individual*/
+.pieChatIndividual{
+    margin-top: -100px;
+}
+
 /*codigo para dar formato a los íconos de navegación*/
 
 .iconos {
@@ -305,6 +308,30 @@ div.contDetails {
 .iconChat {
   color: #eec75c;
   font-size: 45px;
+}
+
+/*Icono Api Key*/
+.IconoApi{
+    margin-left: 500px;
+    height: 100px;
+}
+
+/*Icono Chat General*/
+.IconoChatGeneral{
+    margin-left: 700px;
+   margin-top: 200px;
+
+}
+
+/*Icono Chat Individual*/
+.iconosChatIndividual{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-top: 80px;
+    margin-right: 40px;
+    margin-left: 40px;
+    
 }
 
 .botonApiKey {
@@ -417,6 +444,7 @@ div.contDetails {
   margin-top: 25px;
   margin-left: 30px;
 }
+
 
 @media screen and (max-width: 1040px) {
 
