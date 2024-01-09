@@ -27,6 +27,7 @@ import { chatgeneral } from './views/Chatgeneral.js';
 
 // Define your routes and their associated views
 const routes = {
+  
   '/': Home,
   '/error': Error,
   '/personaje': Personaje,
@@ -45,4 +46,6 @@ setRootEl(viewContainer);
 document.addEventListener('DOMContentLoaded', (event) => {
   onURLChange(event.target.location.pathname);
 });
-window.onpopstate = onURLChange;
+window.addEventListener('popstate', function(event){
+  onURLChange(event.target.location.pathname);
+}) 

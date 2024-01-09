@@ -9,7 +9,8 @@ export const estructuraFiltro = () => {
   filtro.setAttribute('id', 'genero');
 
   const opcion1 = document.createElement('option');
-  opcion1.setAttribute('value', 'blanco1');
+  opcion1.setAttribute('id', 'opcionUno');
+  opcion1.setAttribute('value', 'opcionUno');
   opcion1.textContent = 'Selecciona una opción';
 
   const opcion2 = document.createElement('option');

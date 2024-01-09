@@ -13,31 +13,31 @@ import { botonApiKey } from "../componentes/botonhref.js";
 
 
 export function Home(props) {
-  const d=document;
+  const d = document;
   const homeContenedor = d.createElement("div");
-  const filtros=d.createElement('div');
-  filtros.className='filtros';
-  const botonLimpiado = d.createElement('div');
-  botonLimpiado.appendChild(botonLimpiar());
+  const filtros = d.createElement('div');
+  filtros.className = 'filtros';
+  const cleanButton = d.createElement('div');
+  cleanButton.appendChild(botonLimpiar());
   filtros.appendChild(estructuraFiltro());
   filtros.appendChild(estructuraOrdenamiento());
-  filtros.appendChild(botonLimpiado);
+  filtros.appendChild(cleanButton);
   const datosContados = estadistica(data);
   filtros.appendChild(datosContados);
   const iconos = d.createElement('div');
-  iconos.className='iconos';
+  iconos.className = 'iconos';
   iconos.appendChild(iconHome())
   iconos.appendChild(iconChat());
   iconos.appendChild(botonApiKey());
   homeContenedor.appendChild(iconos);
   homeContenedor.appendChild(header());
-  
+
   homeContenedor.appendChild(filtros);
-  
-  
+
+
 
   //Contenedor de estadística
-  
+
 
   //Contenedor filtro
   const tarjetas = renderItems(data);
@@ -48,13 +48,17 @@ export function Home(props) {
   //pie de página
   homeContenedor.appendChild(pieDePagina());
   //botón para limpiar
-  botonLimpiado.addEventListener('click', function () {
+
+  
+  cleanButton.addEventListener('click', function () {
+    const filtroGenero= homeContenedor.querySelector('#genero');
+    filtroGenero.selectedIndex=0;
+    const ordenamiento = homeContenedor.querySelector('#ordenado');
+    ordenamiento.selectedIndex=0;
     contenedorTarjetas.innerHTML = "";
-    contenedorTarjetas.appendChild(renderItems(data)); 
-    filtros.innerHTML = "";
-    filtros.appendChild(estructuraFiltro());
-  filtros.appendChild(estructuraOrdenamiento());
-  filtros.appendChild(estadistica(data));
+    contenedorTarjetas.appendChild(tarjetas);
+    datosContados.innerHTML = "";
+    datosContados.appendChild(estadistica(data));
   });
 
 
@@ -67,10 +71,11 @@ export function Home(props) {
   });
 
   const contenedorFiltro = homeContenedor.querySelector("#genero");
-  contenedorFiltro.addEventListener("change", function (event) {
-    //if(event.target.value==="Selecciona un género"){
-
-      //contenedorTarjetas.appendChild(tarjetas);
+  contenedorFiltro.addEventListener("change", function(event) {
+    // if(event.target.value==="Selecciona una opción"){
+    //   contenedorTarjetas.innerHTML='';
+    //   contenedorTarjetas.appendChild(tarjetas);
+    // }
     //}else if(event.target.value!=="Selecciona un género"){
     const generos = filterData(data, "genre", event.target.value);
     contenedorTarjetas.innerHTML = "";
@@ -84,12 +89,12 @@ export function Home(props) {
 
     const contenedorDatosOrdenados = homeContenedor.querySelector("#ordenado");
     contenedorDatosOrdenados.addEventListener("change", function (event) {
-      
+
       const ordenados = sortData(generos, "name", event.target.value);
       contenedorTarjetas.innerHTML = "";
       contenedorTarjetas.appendChild(renderItems(ordenados));
 
     });
-});
+  });
   return homeContenedor;
 }
