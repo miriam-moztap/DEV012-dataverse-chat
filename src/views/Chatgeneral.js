@@ -8,7 +8,7 @@ export function chatgeneral() {
   const d = document;
   const chatView = d.createElement("div");
   const iconoChatGeneral = document.createElement ('div');
-  iconoChatGeneral.className = "IconoChatGeneral";
+  iconoChatGeneral.className = "IconoApi";
   iconoChatGeneral.appendChild(iconHome());
   chatView.appendChild(iconoChatGeneral);
   chatView.appendChild(header());

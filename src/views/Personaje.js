@@ -22,7 +22,7 @@ export function Personaje(props) {
   const chatPersonaje = d.createElement('section');
   chatPersonaje.className = 'chatPersonaje';
 
-  const { name, shortDescription, imageUrl } = props;
+  const { name, shortDescription, imageUrl, genre, albums, artist } = props;
 
   // Renderizamos nuevamente la información detallada
   const detailElement = d.createElement('div');
@@ -31,10 +31,13 @@ export function Personaje(props) {
     <h2>${name}</h2>
     <img class="imag" src="${imageUrl}" alt="imagen"/>
     <dt><strong>Descripción:</strong></dt><dd itemprop="description">${shortDescription}</dd>
+    <dt><strong>Género:</strong></dt><dd itemprop="genre">${genre}</dd>
+      <dt><strong>Número de Albumnes:</strong></dt><dd itemprop="albums">${albums}</dd>
+      <dt><strong>Solista o grupo:</strong></dt><dd itemprop="artist">${artist}</dd>
   </li>
       `;
   const contDetails = d.createElement('div');
-  contDetails.className='contDetails';
+  contDetails.className ='contDetails';
   contDetails.appendChild(detailElement)
   chatPersonaje.appendChild(contDetails);
   const contChat = d.createElement('section');

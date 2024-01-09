@@ -1,8 +1,7 @@
-/*diseño de la página de main*/
+/*Diseño de la página de main*/
 
 body {
-  background-color: #2874A6;
-
+  background-color: #2874a6;
 }
 
 header {
@@ -11,7 +10,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 40px;
 }
 
@@ -21,7 +20,6 @@ header {
   padding: 5px;
   margin: 10px;
 }
-
 
 .filtros {
   margin-left: 3%;
@@ -36,7 +34,6 @@ header {
   border-radius: 10px;
   align-items: center;
   text-align: center;
-  /*background: url("./images/mostaza1.jpg");*/
   background-color: #da6e92;
   background-size: cover;
 }
@@ -59,11 +56,6 @@ select {
   margin-top: 10px;
 }
 
-h1 {
-  column-span: all;
-  color: white;
-}
-
 label {
   font-family: "verdana";
 }
@@ -80,7 +72,6 @@ li dd,
   margin: auto;
   margin: 5px;
   color: #222323;
-  
 }
 
 .imag {
@@ -104,16 +95,12 @@ li dd,
   font-size: medium;
   margin-bottom: 30px;
   margin-right: 30px;
-  color: aqua navajowhite;
-  /*background: url("./images/mostaza1.jpg");*/
   background-color: #f2c343;
-  background-size: cover;
   text-align: center;
   width: 450px;
   flex-direction: column;
   column-count: 2;
   list-style-type: none;
-
 }
 
 footer {
@@ -127,7 +114,7 @@ footer {
   font-weight: 300;
 }
 
-/*diseño chat general*/
+/*Diseño chat general*/
 .cajaChatGeneral {
   margin: auto;
   display: block;
@@ -139,8 +126,20 @@ footer {
   top: -400px;
 }
 
+.IconoChatGeneral {
+    margin-left: 700px;
+    margin-top: 200px;
+  }
 
-/*diseño de la imagen del chat individual*/
+.cajaPrincipalChatG {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    justify-content: center;
+  }
+  
+
+/*Diseño de la imagen del chat individual*/
 .contPer {
   margin: auto;
 }
@@ -153,9 +152,7 @@ div.contDetails {
   padding: 20px;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 27px;
-  /*background: url("./images/mostaza1.jpg");*/
   background-color: #f2c343;
-  background-size: cover;
   text-align: center;
   flex-direction: column;
   width: 450px;
@@ -167,7 +164,7 @@ div.contDetails {
   height: 350px;
 }
 
-/*diseño chat individual dentro de la vista del personaje*/
+/*Diseño chat individual dentro de la vista del personaje*/
 .chatPersonaje {
   margin-top: 15px;
   flex-direction: column;
@@ -178,7 +175,6 @@ div.contDetails {
   border-right-color: 10px #fff;
   margin-left: auto;
 }
-
 
 .botonEnviar {
   display: flex;
@@ -191,7 +187,6 @@ div.contDetails {
   font-size: 0.5cm;
   border-radius: 10px 90px / 120px;
   margin-top: 25px;
-
 }
 
 .chat {
@@ -199,8 +194,8 @@ div.contDetails {
   justify-content: left;
   margin: auto;
   overflow-x: hidden;
-  overflow-y:scroll;
-  
+  overflow-y: visible;
+
   height: 450px;
   width: 800px;
   resize: none;
@@ -229,21 +224,18 @@ div.contDetails {
 }
 
 .mensaje {
-  
-
   margin-top: 0.2cm;
   margin-left: 1cm;
 }
 
-/*Diseño para vista de Chat General*/
-
-.cajaPrincipalChatG {
-  display: flex;
-  flex-direction: column;
-  place-items: center;
-  justify-content: center;
-  
-}
+.iconosChatIndividual {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-top: 80px;
+    margin-right: 40px;
+    margin-left: 40px;
+  }
 
 /*Diseño vista Error*/
 
@@ -260,6 +252,8 @@ div.contDetails {
   height: auto;
 }
 
+/*Diseño vista Api Key*/
+
 .apiTitulo {
   margin-top: 5px;
   font-size: 1cm;
@@ -273,12 +267,6 @@ div.contDetails {
   place-items: center;
   justify-content: center;
   margin-top: 200px;
-
-}
-
-.footerApi {
-  position: relative;
-  top: 100px
 }
 
 .formularioApiKey {
@@ -292,10 +280,13 @@ div.contDetails {
   resize: none;
 }
 
-/*footer Chat Individual*/
-.pieChatIndividual{
-    margin-top: -100px;
-}
+.botonApiKey {
+    width: 150px;
+    border-radius: 10px;
+    font-size: 0.6cm;
+    font-weight: bold;
+    background-color: #e3cd93;
+  }
 
 /*codigo para dar formato a los íconos de navegación*/
 
@@ -313,47 +304,14 @@ div.contDetails {
   font-size: 45px;
 }
 
-/*Icono Api Key*/
-.IconoApi{
-    margin-left: 500px;
-    height: 100px;
-}
-
-/*Icono Chat General*/
-.IconoChatGeneral{
-    margin-left: 700px;
-   margin-top: 200px;
-
-}
-
-/*Icono Chat Individual*/
-.iconosChatIndividual{
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    margin-top: 80px;
-    margin-right: 40px;
-    margin-left: 40px;
-    
-}
-
-.botonApiKey {
-  width: 150px;
-  border-radius: 10px;
-  font-size: 0.6cm;
-  font-weight: bold;
-  background-color: #e3cd93;
-
-
-}
-
 @media screen and (max-width: 767px) {
 
-  /*codigo responsive para la página de HOME*/
-  body{
-    margin:auto;
+  /*Codigo responsive para la página de HOME*/
 
+  body {
+    margin: auto;
   }
+
   h1 {
     font-size: 30px;
     margin-left: 30px;
@@ -363,7 +321,6 @@ div.contDetails {
     width: 90px;
     height: 90px;
     justify-content: center;
-    
   }
 
   .liClass {
@@ -381,7 +338,7 @@ div.contDetails {
   .ulClass {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap:10px;
+    gap: 10px;
     position: relative;
     justify-content: center;
     margin: auto;
@@ -399,10 +356,6 @@ div.contDetails {
     margin-bottom: 5px;
     font-size: 9px;
     margin: auto;
-  }
-
-  #estadistica {
-    margin-right: 15px;
   }
 
   footer {
@@ -429,7 +382,6 @@ div.contDetails {
 
   .estadistica {
     display: flex;
-    
   }
 
   select {
@@ -438,20 +390,25 @@ div.contDetails {
     margin-top: 5px;
     font-size: small;
   }
+  .iconos {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    margin: auto;
+    margin-top: 25px;
+    margin-right: 30px;
+  }
+  .IconoApi {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+  }
 }
-.iconos {
-  display: flex;
-  gap: 40px;
-  justify-content: center;
-  margin: auto;
-  margin-top: 25px;
-  margin-left: 30px;
-}
-
 
 @media screen and (max-width: 1040px) {
 
-  /*codigo responsive para el chat individual y para chat general*/
+  /*Codigo responsive para el chat individual y para chat general*/
+
   .chatPersonaje {
     display: flex;
     justify-items: center;
@@ -507,7 +464,8 @@ div.contDetails {
     margin-top: 100%;
   }
 
-  /*codigo de imagen de error (responsive)*/
+  /*Codigo de imagen de error*/
+
   .contenedorImagen {
     display: flex;
     justify-content: center;
