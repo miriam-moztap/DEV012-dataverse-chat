@@ -195,17 +195,18 @@ div.contDetails {
 }
 
 .chat {
-  display: flex;
-  justify-content: center;
+  display: block;
+  justify-content: left;
   margin: auto;
   overflow-x: hidden;
-  overflow-y: visible;
+  overflow-y:scroll;
+  
   height: 450px;
   width: 800px;
   resize: none;
   background-color: #da6e92;
   font-family: Courier, sans-serif;
-  border-radius: 18px;
+  border-radius: 10px 20px 10px 20px;
   color: #fff;
   font-size: 0.6cm;
   font-weight: bold;
@@ -228,7 +229,9 @@ div.contDetails {
 }
 
 .mensaje {
-  margin-top: 1cm;
+  
+
+  margin-top: 0.2cm;
   margin-left: 1cm;
 }
 
@@ -445,7 +448,6 @@ div.contDetails {
 
   .chat {
     display: flex;
-  align-items: left;
     margin-top: 5%;
     overflow-x: hidden;
     overflow-y: auto;

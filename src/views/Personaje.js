@@ -50,7 +50,7 @@ export function Personaje(props) {
     const Mensaje = d.createElement('div');
     Mensaje.className='mensaje';
     Mensaje.textContent = textArea.value;
-    cajaChat.insertAdjacentElement('beforeend', Mensaje);
+    cajaChat.appendChild(Mensaje);
     textArea.value = '';
   });
   return contPer;
