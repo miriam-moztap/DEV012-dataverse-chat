@@ -1,11 +1,18 @@
 import { header } from "../componentes/header.js";
 import { pieDePagina } from "../componentes/footer.js";
 import { formularioEnviar } from "../componentes/formulario.js";
+import { iconHome } from "../componentes/iconos.js";
 
 //la función de fetch s etiene que generar dentro de lib, pasar ahí tamibén el data set y el data functions
 export function contenedorAPI() {
-  const contenedorAPI = document.createElement("div");
+   const contenedorAPI = document.createElement("div");
   contenedorAPI.className = "apiKey";
+
+  const contenedorIconoApi = document.createElement('div');
+  contenedorIconoApi.className = "IconoApi";
+  contenedorIconoApi.appendChild(iconHome());
+contenedorAPI.appendChild(contenedorIconoApi);
+
   
   contenedorAPI.appendChild(header());
   const apiTitulo = document.createElement('h1');
