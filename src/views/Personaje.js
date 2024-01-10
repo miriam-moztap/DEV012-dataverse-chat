@@ -5,6 +5,8 @@ import { chat } from '../componentes/formulario.js';
 import { formularioEnviar } from '../componentes/formulario.js';
 import { iconHome } from '../componentes/iconos.js';
 import { iconChat } from "../componentes/iconos.js";
+import { getCompletion } from '../lib/API.js';
+import { navigateTo } from "../router.js";
 
 export function Personaje(props) {
   // Accedemos a las propiedades
@@ -64,7 +66,24 @@ export function Personaje(props) {
     Mensaje.className='mensaje';
     Mensaje.textContent = textArea.value;
     cajaChat.appendChild(Mensaje);
-    textArea.value = '';
+    
+     const clave = localStorage.getItem('chatGptApiKey');
+     console.log(clave);
+      if(clave){
+    getCompletion(textArea.value, props.name)
+    .then((respuesta)=>respuesta.json())   
+    .then((respuestaArtista)=>{
+      const response = respuestaArtista.choices[0].message.content;  
+      textArea.value = '';
+      const mensajeArtista= d.createElement('div');
+      mensajeArtista.className='mensajeArtista';
+      mensajeArtista.innerHTML=response;
+      cajaChat.appendChild(mensajeArtista);
+      
+    })
+  }else {
+    navigateTo('/apikey');
+  }
   });
   return contPer;
 }

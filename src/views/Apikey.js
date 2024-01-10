@@ -24,25 +24,24 @@ contenedorAPI.appendChild(contenedorIconoApi);
   contenedorAPI.appendChild(formularioEnviar());
   contenedorAPI.appendChild(pieDePagina());
 
-  const formularioApi = contenedorAPI.querySelector("#formApi");
-  if (formularioApi) {
-    formularioApi.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const apiKey = contenedorAPI.querySelector(".textAreaApi").value;
-      console.log(apiKey);
+  const botonEnviar = contenedorAPI.querySelector("#botonEnviar");
+  const apiKey = contenedorAPI.querySelector("#textArea");
+  //if (botonEnviar) {
+    botonEnviar.addEventListener("click", () => {
+      console.log(apiKey.value);
 
-      const apiKeyValid = await validarApiKey(apiKey);
-      if (apiKeyValid) {
-        localStorage.setItem("chatGptApiKey", apiKey);
-        window.location.href = "/chatindividual";
-      } else {
-        alert("Api Key incorrecta, inténtalo de nuevo");
-      }
+      //const apiKeyValid = await validarApiKey(apiKey);
+      //if (apiKeyValid) {
+        localStorage.setItem("chatGptApiKey", apiKey.value);
+        window.location.href = "/personaje";
+    //   } else {
+    //     alert("Api Key incorrecta, inténtalo de nuevo");
+    //   }
     });
-    async function hayApiKey(apiKey) {
-      localStorage.getItem(apiKey); //aquí tenemos que decirle que si hay una apikey que nos mande al chat, si no pos a la apikey
-      return apiKey === "aa";
-    }
-  }
+    // async function hayApiKey(apiKey) {
+    //   localStorage.getItem(apiKey); //aquí tenemos que decirle que si hay una apikey que nos mande al chat, si no pos a la apikey
+    //   return apiKey === "aa";
+    // }
+  //}
   return contenedorAPI;
 }
