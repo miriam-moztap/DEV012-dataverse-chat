@@ -432,7 +432,7 @@ div.contDetails {
   }
 
   .chat {
-    display: flex;
+    display: block;
     margin-top: 5%;
     overflow-x: hidden;
     overflow-y: auto;
