@@ -1,4 +1,4 @@
-import { computeStats } from "../dataFunctions.js";
+import { computeStats } from "../lib/dataFunctions.js";
 
 export const estadistica = (data) => {
   const contEst = document.createElement("div");
