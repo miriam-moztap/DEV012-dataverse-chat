@@ -2,6 +2,9 @@ import { header } from "../componentes/header.js";
 import { pieDePagina } from "../componentes/footer.js";
 import { formularioEnviar } from "../componentes/formulario.js";
 import { iconHome } from "../componentes/iconos.js";
+import { botonChatGeneral } from "../componentes/bchatGrupal.js";
+import { botonChatIndividual } from "../componentes/bchatGrupal.js";
+import { navigateTo } from "../router.js";
 
 //la función de fetch s etiene que generar dentro de lib, pasar ahí tamibén el data set y el data functions
 export function contenedorAPI() {
@@ -22,26 +25,33 @@ contenedorAPI.appendChild(contenedorIconoApi);
 
   
   contenedorAPI.appendChild(formularioEnviar());
+  const botonesChats = document.createElement('div');
+  botonesChats.className = "botonesChats";
+  botonesChats.appendChild(botonChatGeneral());
+  botonesChats.appendChild(botonChatIndividual());
+ 
+  contenedorAPI.appendChild(botonesChats);
+  
   contenedorAPI.appendChild(pieDePagina());
+
+  //Funcionalidad botonesChats
+  const bChatGeneral = contenedorAPI.querySelector('.botonChatGeneral');
+  bChatGeneral.addEventListener("click", () => {
+navigateTo("/chatgeneral");
+  });
+
+  const bChatIndividual = contenedorAPI.querySelector('.botonChatIndividual');
+  bChatIndividual.addEventListener("click", () => {
+navigateTo("/personaje");
+  });
 
   const botonEnviar = contenedorAPI.querySelector("#botonEnviar");
   const apiKey = contenedorAPI.querySelector("#textArea");
-  //if (botonEnviar) {
     botonEnviar.addEventListener("click", () => {
       console.log(apiKey.value);
-
-      //const apiKeyValid = await validarApiKey(apiKey);
-      //if (apiKeyValid) {
         localStorage.setItem("chatGptApiKey", apiKey.value);
-        window.location.href = "/personaje";
-    //   } else {
-    //     alert("Api Key incorrecta, inténtalo de nuevo");
-    //   }
+        //window.location.href = "/personaje";
+    alert("Tu Api se ha guardado, dirígete al Chat que desees");
     });
-    // async function hayApiKey(apiKey) {
-    //   localStorage.getItem(apiKey); //aquí tenemos que decirle que si hay una apikey que nos mande al chat, si no pos a la apikey
-    //   return apiKey === "aa";
-    // }
-  //}
   return contenedorAPI;
 }
