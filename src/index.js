@@ -3,7 +3,6 @@ import { Personaje } from "./views/Personaje.js";
 import { setRootEl, setRoutes, onURLChange } from "./router.js";
 import { Error } from "./views/Error.js";
 import { contenedorAPI } from "./views/Apikey.js";
-import { chatindividual } from "./views/Chatindivudual.js";
 import { chatgeneral } from "./views/Chatgeneral.js";
 
 // Rutas
