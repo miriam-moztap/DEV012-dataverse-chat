@@ -127,17 +127,16 @@ footer {
 }
 
 .IconoChatGeneral {
-    margin-left: 700px;
-    margin-top: 200px;
-  }
+  margin-left: 700px;
+  margin-top: 200px;
+}
 
 .cajaPrincipalChatG {
-    display: flex;
-    flex-direction: column;
-    place-items: center;
-    justify-content: center;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  justify-content: center;
+}
 
 /*Diseño de la imagen del chat individual*/
 .contPer {
@@ -229,13 +228,23 @@ div.contDetails {
 }
 
 .iconosChatIndividual {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    margin-top: 80px;
-    margin-right: 40px;
-    margin-left: 40px;
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-top: 80px;
+  margin-right: 40px;
+  margin-left: 40px;
+}
+
+.botonLimpiarApi {
+  margin-left: 85px;
+  margin-top: 50px;
+  width: 200px;
+  border-radius: 10px;
+  font-size: 0.6cm;
+  font-weight: bold;
+  background-color: #e3cd93;
+}
 
 /*Diseño vista Error*/
 
@@ -266,7 +275,7 @@ div.contDetails {
   flex-direction: column;
   place-items: center;
   justify-content: center;
-  margin-top: 200px;
+  margin-top: 100px;
 }
 
 .formularioApiKey {
@@ -281,12 +290,32 @@ div.contDetails {
 }
 
 .botonApiKey {
-    width: 150px;
-    border-radius: 10px;
-    font-size: 0.6cm;
-    font-weight: bold;
-    background-color: #e3cd93;
-  }
+  width: 150px;
+  border-radius: 10px;
+  font-size: 0.6cm;
+  font-weight: bold;
+  background-color: #e3cd93;
+}
+
+.botonChatGeneral {
+  margin-top: 50px;
+  width: 120px;
+  margin-right: 50px;
+  border-radius: 10px;
+  font-size: 0.6cm;
+  font-weight: bold;
+  background-color: #e3cd93;
+}
+
+.botonChatIndividual {
+  margin-top: 50px;
+  margin-left: 50px;
+  width: 120px;
+  border-radius: 10px;
+  font-size: 0.6cm;
+  font-weight: bold;
+  background-color: #e3cd93;
+}
 
 /*codigo para dar formato a los íconos de navegación*/
 
@@ -305,7 +334,6 @@ div.contDetails {
 }
 
 @media screen and (max-width: 767px) {
-
   /*Codigo responsive para la página de HOME*/
 
   body {
@@ -406,7 +434,6 @@ div.contDetails {
 }
 
 @media screen and (max-width: 1040px) {
-
   /*Codigo responsive para el chat individual y para chat general*/
 
   .chatPersonaje {
