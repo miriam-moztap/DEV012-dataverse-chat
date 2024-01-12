@@ -50,7 +50,7 @@ export function Personaje(props) {
   contPer.appendChild(chatPersonaje);
   const botonBorrarApi = d.createElement('div');
   botonBorrarApi.className = "botonBorrarApi";
-  botonBorrarApi.textContent = "Borra Api Key";
+ 
   botonBorrarApi.appendChild(botonLimpiar());
   contPer.appendChild(botonBorrarApi);
   const piePersonaje = document.createElement("div");
@@ -59,10 +59,14 @@ export function Personaje(props) {
   contPer.appendChild(piePersonaje);
 
   //Funcionalidad botonBorrarApi
+
   const botonLimpiarApi =contPer.querySelector(".botonLimpiar");
+botonLimpiarApi.className = "botonLimpiarApi";
+botonLimpiarApi.textContent = "Borra Api Key";
   botonBorrarApi.addEventListener("click", function (){
     localStorage.removeItem("chatGptApiKey");
     navigateTo("/apikey");
+    contPer.appendChild(botonLimpiarApi);
   });
 
   //funcionalidad para enviar el mensaje escrito en el text área a la zona de chat

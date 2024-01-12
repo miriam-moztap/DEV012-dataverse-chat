@@ -30,5 +30,4 @@ const API_KEY= localStorage.getItem('chatGptApiKey');
     return respuesta;
 }
 
-//pARAMETRO 1 ES EL INPUT DEL USUARIO
-//
+
