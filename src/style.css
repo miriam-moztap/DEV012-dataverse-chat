@@ -237,8 +237,10 @@ div.contDetails {
 }
 
 .botonLimpiarApi {
-  margin-left: 85px;
-  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  margin:auto;
+  margin-top: 50px; 
   width: 200px;
   border-radius: 10px;
   font-size: 0.6cm;
