@@ -42,7 +42,7 @@ navigateTo("/chatgeneral");
 
   const bChatIndividual = contenedorAPI.querySelector('.botonChatIndividual');
   bChatIndividual.addEventListener("click", () => {
-navigateTo("/personaje");
+navigateTo("/");
   });
 
   const botonEnviar = contenedorAPI.querySelector("#botonEnviar");

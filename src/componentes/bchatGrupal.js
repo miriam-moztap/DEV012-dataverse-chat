@@ -8,6 +8,6 @@ return botonChatGeneral;
 export function botonChatIndividual (){
     const botonChatIndividual = document.createElement("button");
     botonChatIndividual.className = "botonChatIndividual";
-    botonChatIndividual.textContent = "Chat Individual";
+    botonChatIndividual.textContent = "Regresa y elige a un artista";
     return botonChatIndividual;
     };

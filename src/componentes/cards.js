@@ -38,14 +38,15 @@ export function renderItems(data) {
     li.addEventListener("click", () => {
       const pathname = "/personaje";
       const props = {
-        name: element.name,
+        id:element.id
+        /*name: element.name,
         shortDescription: element.shortDescription,
         imageUrl: element.imageUrl,
         genre: element.facts.genre,
         albums: element.facts.albums,
-        artist: element.facts.artist,
+        artist: element.facts.artist, */
       };
-      navigateTo(pathname, props);
+      navigateTo('/personaje', {id:element.id});
     });
   }
   return ul;

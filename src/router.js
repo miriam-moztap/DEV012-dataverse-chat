@@ -1,5 +1,5 @@
 let ROUTES = {};
-let rootElement = "";
+let rootElement = '';
 
 export const setRootEl = (newRoutesElementValue) => {
   // Asignación rootEl
@@ -7,8 +7,8 @@ export const setRootEl = (newRoutesElementValue) => {
 };
 
 export const setRoutes = (newRoutesValue) => {
-  if (typeof newRoutesValue === "object") {
-    if (newRoutesValue["/error"]) {
+  if (typeof newRoutesValue === 'object') {
+    if (newRoutesValue['/error']) {
       ROUTES = newRoutesValue;
     }
   }
@@ -17,22 +17,23 @@ export const setRoutes = (newRoutesValue) => {
   // assign ROUTES
 };
 
-// const queryStringToObject = (queryString) => {
-// convert query string to URLSearchParams
-// convert URLSearchParams to an object
-// return the object
-// }
+const queryStringToObject = (queryString) => {
+  if (!queryString) return {};
+  const searchParam = new URLSearchParams(queryString);
+  const objet = Object.fromEntries(searchParam);
+  return objet;
+};
 
 const renderView = (pathname, props = {}) => {
   // clear the root element
   const root = rootElement;
-  root.innerHTML = "";
+  root.innerHTML = '';
   // find the correct view in ROUTES for the pathname
   if (ROUTES[pathname]) {
     const template = ROUTES[pathname](props);
     root.appendChild(template);
   } else {
-    root.appendChild(ROUTES["/error"]());
+    root.appendChild(ROUTES['/error']());
   }
   // in case not found render the error view
   // render the correct view passing the value of props
@@ -42,14 +43,20 @@ const renderView = (pathname, props = {}) => {
 export const navigateTo = (pathname, props = {}) => {
   // update window history with pushState
   const URLvisited = window.location.origin + pathname;
-  window.history.pushState({}, "", URLvisited);
+  window.history.pushState(
+    {},
+    pathname,
+    `${window.location.origin + pathname}${props ? `?${new URLSearchParams(props)}` : ''}`,
+  );
   // render the view with the pathname and props
   renderView(pathname, props);
 };
 
-export const onURLChange = (pathname) => {
+export const onURLChange = (location = '/', props = {}) => {
   // parse the location for the pathname and search params
+  const { pathname } = location;
   // convert the search params to an object
+  const params = { ...props, ...queryStringToObject(window.location.search) };
   // render the view with the pathname and object
-  renderView(pathname);
+  renderView(pathname || location, params);
 };
