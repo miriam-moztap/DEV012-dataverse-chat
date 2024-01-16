@@ -4,7 +4,7 @@ import { header } from '../componentes/header.js';
 import { pieDePagina } from '../componentes/footer.js';
 import { iconHome } from '../componentes/iconos.js';
 import { navigateTo } from '../router.js';
-import { getCompletion } from '../lib/ApiChatG.js';
+import { getCompletion } from '../lib/API.js';
 import data from '../data/dataset.js';
 import { renderItems } from '../componentes/cards.js';
 
