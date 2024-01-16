@@ -5,22 +5,29 @@ import { pieDePagina } from '../componentes/footer.js';
 import { iconHome } from '../componentes/iconos.js';
 import { navigateTo } from '../router.js';
 import { getCompletion } from '../lib/ApiChatG.js';
-import data from '../../../../../../../data/dataset.js';
+import data from '../data/dataset.js';
+import { renderItems } from '../componentes/cards.js';
 
-export function chatgeneral() {
+export function chatgeneral(props) {
   const d = document;
   const chatView = d.createElement('div');
-  const iconoChatGeneral = document.createElement('div');
+  const iconoChatGeneral = d.createElement('div');
   iconoChatGeneral.className = 'IconoApi';
   iconoChatGeneral.appendChild(iconHome());
   chatView.appendChild(iconoChatGeneral);
   chatView.appendChild(header());
-
+  const otraCaja = d.createElement('div');
+  otraCaja.className = "otraCaja";
   const cajaPrincipal = d.createElement('div');
   cajaPrincipal.className = 'cajaPrincipalChatG';
   cajaPrincipal.appendChild(chat());
   cajaPrincipal.appendChild(formularioEnviar());
-  chatView.appendChild(cajaPrincipal);
+  const artistas = d.createElement('div');
+  artistas.className = "artistasCG";
+  artistas.appendChild(renderItems(data, false));
+  otraCaja.appendChild(artistas);
+  otraCaja.appendChild(cajaPrincipal);
+  chatView.appendChild(otraCaja);
 
   chatView.appendChild(pieDePagina());
 
@@ -39,26 +46,37 @@ export function chatgeneral() {
     textArea.value = '';
 
     const clave = localStorage.getItem('chatGptApiKey');
-    if (clave) {
-      for (const element of data) {
-        getCompletion(textArea.value, element.name)
-          .then((respuesta) => respuesta.json())
-          .then((respuestaArtista) => {
-            const response = respuestaArtista.choices[0].message.content;
-            textArea.value = '';
-            const mensajeArtista = d.createElement('div');
-            mensajeArtista.className = 'mensajeArtista';
-            mensajeArtista.innerHTML = response;
-            cajaChat.appendChild(mensajeArtista);
-          })
-          .catch((error) => {
-            alert('Error: la Api Key que ingresaste es incorrecta', error);
-          });
-      }
-    } else {
+    if (!clave) {
       navigateTo('/apikey');
+      return;
     }
-  });
+    const errorApi=d.createElement('button');
+    errorApi.className = 'errorApi';
+    errorApi.textContent = 'La API Key es incorrecta, da click aquí para volver a introducirla';
+    errorApi.addEventListener('click', () => {
+      navigateTo('/apikey');
+    });
+
+    for (const element of data) {
+
+      getCompletion(textArea.value, element.name)
+        .then((respuesta) => respuesta.json())
+        .then((respuestaArtista) => {
+          const response = respuestaArtista.choices[0].message.content;
+          textArea.value = '';
+          const mensajeArtista = d.createElement('div');
+          mensajeArtista.className = 'mensajeArtista';
+          mensajeArtista.innerHTML = response;
+          cajaChat.appendChild(mensajeArtista);
+        })
+        .catch((error) => {
+          if (error) {
+            
+          }
+          chatView.appendChild(errorApi);
+        });
+    }
+  });//click
 
   return chatView;
 }

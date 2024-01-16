@@ -1,3 +1,6 @@
+
+
+
 export function botonChatGeneral (){
 const botonChatGeneral = document.createElement("button");
 botonChatGeneral.className = "botonChatGeneral";

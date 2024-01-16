@@ -136,6 +136,61 @@ footer {
   flex-direction: column;
   place-items: center;
   justify-content: center;
+  margin-right: 8cm;
+}
+
+.tarjeta dd,
+.tarjeta dd {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  font-size: x-large;
+  color: #222323;
+  padding: 7px;
+}
+
+.tarjeta .imag {
+  padding: 15px;
+  height: 180px;
+  width: 180px;
+  border-radius: 15%;
+}
+
+.tarjeta {
+  box-sizing: border-box;
+  border-radius: 10px;
+  padding: 20px;
+  margin:auto;
+  margin-left: 0%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: medium;
+  margin-bottom: 30px;
+  background-color: #f2c343;
+  text-align: center;
+  height: 300px;
+  width: 320px;
+
+}
+
+.artistasCG {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  overflow-x: hidden;
+  overflow-y:scroll;
+  height: 10cm;
+  width: 16cm;
+  margin-left: 8cm;
+  margin-top: 1cm;
+
+}
+
+.otraCaja {
+  display: block;
+  flex-direction: column;
+  column-count: 2;
+
+
 }
 
 /*Diseño de la imagen del chat individual*/
@@ -239,8 +294,8 @@ div.contDetails {
 .botonLimpiarApi {
   display: flex;
   justify-content: center;
-  margin:auto;
-  margin-top: 50px; 
+  margin: auto;
+  margin-top: 50px;
   width: 200px;
   border-radius: 10px;
   font-size: 0.6cm;
@@ -420,6 +475,7 @@ div.contDetails {
     margin-top: 5px;
     font-size: small;
   }
+
   .iconos {
     display: flex;
     gap: 40px;
@@ -428,11 +484,12 @@ div.contDetails {
     margin-top: 25px;
     margin-right: 30px;
   }
+
   .IconoApi {
     display: flex;
     justify-content: center;
     margin: auto;
-  }
+    padding: 5cm;
 }
 
 @media screen and (max-width: 1040px) {
@@ -451,7 +508,7 @@ div.contDetails {
     justify-content: center;
     margin: auto;
     width: 200px;
-    height: 250px;
+    height: 400px;
     font-size: small;
   }
 
@@ -493,6 +550,62 @@ div.contDetails {
     margin-top: 100%;
   }
 
+  .otraCaja {
+    display: flex;
+    justify-items: center;
+    margin-top: 15px;
+    flex-direction: column;
+    column-count: 1;
+    
+  }
+  .cajaPrincipalChatG {
+    display: flex;
+    justify-content: center;
+    margin:auto;
+    margin-left:60px;
+   
+  }
+  
+  .tarjeta dd,
+  .tarjeta dd {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    color: #222323;
+  }
+  
+  .tarjeta .imag {
+    height: 50px;
+    width: 50px;
+    border-radius: 15%;
+  }
+  
+  .tarjeta {
+    box-sizing: border-box;
+    border-radius: 10px;
+    margin:auto;
+    margin-left: 0%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+    margin-bottom: 30px;
+    background-color: #f2c343;
+    text-align: center;
+    height: 140px;
+    width: 120px;
+  
+  }
+  
+  .artistasCG {
+    display: block;
+    justify-content: center;
+    margin: auto;
+    overflow-x: hidden;
+    overflow-y: visible;
+    height: 5cm;
+    width: 8cm;
+  
+  }
+
   /*Codigo de imagen de error*/
 
   .contenedorImagen {
@@ -508,4 +621,6 @@ div.contDetails {
     width: 300px;
     height: auto;
   }
+
+  /*vista responsiva del chat general*/
 }
