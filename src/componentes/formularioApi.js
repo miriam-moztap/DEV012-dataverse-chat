@@ -1,14 +1,35 @@
 export function formularioApiKey() {
-  const form = document.createElement("form");
-  form.setAttribute("id", "formApiK");
-  const textArea = document.createElement("textarea");
-  textArea.placeholder = "Introduce la APIKey";
-  textArea.className = "formularioApiKey";
-  const input = document.createElement("input");
-  input.type = "submit";
-  input.className = "botonEnviar";
-  input.value = "Enviar";
-  form.appendChild(textArea);
-  form.appendChild(input);
-  return form;
+  const contPassword = document.createElement("div");
+  contPassword.className="cajaPassword";
+
+  // Contraseña
+  const passwordInput = document.createElement('input');
+  passwordInput.type = "password";
+  passwordInput.setAttribute("id", "password");
+
+  // Checkbox para mostrar/ocultar contraseña
+  const showPasswordCheckbox = document.createElement('input');
+  showPasswordCheckbox.type = "checkbox";
+  showPasswordCheckbox.addEventListener('change', function() {
+    passwordInput.type = this.checked ? "text" : "password";
+  });
+
+  // Etiqueta para el checkbox
+  const showPasswordLabel = document.createElement('label');
+  showPasswordLabel.textContent = "Mostrar Api Key";
+  showPasswordLabel.appendChild(showPasswordCheckbox);
+
+  // Botón
+  const button = document.createElement("button");
+  button.className = "botonEnviar";
+  button.setAttribute("id", "botonEnviar");
+  button.textContent = "Enviar";
+
+  // Agregar elementos al contenedor
+
+  contPassword.appendChild(passwordInput);
+  contPassword.appendChild(showPasswordLabel);
+  contPassword.appendChild(button);
+
+  return contPassword;
 }
