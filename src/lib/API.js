@@ -1,6 +1,6 @@
 // aquí vamos a crear la funcionalidad para que chatgpt nos dé una respuesta
 
-export function getCompletion(inputUsuario, cantante) {
+export function getCompletion(inputUsuario, name) {
   const API_KEY = localStorage.getItem('chatGptApiKey');
   const respuesta = fetch('https://api.openai.com/v1/chat/completions', {
     method: 'POST',
@@ -13,14 +13,13 @@ export function getCompletion(inputUsuario, cantante) {
       messages: [
         {
           role: 'system',
-          content: `Simula que eres ${cantante}, si eres un grupo o banda, asume que eres el vocalista principal, si no, asume que eres el vocalista`,
+          content: `Simula que eres ${name}, un personaje llamado ${name}. Si eres un grupo o banda, asume que eres el vocalista principal, si no, asume que eres el vocalista`,
 
         },
         {
           role: 'user',
           content: inputUsuario,
         },
-
       ],
     }),
   });
