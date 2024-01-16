@@ -88,7 +88,7 @@ export function Personaje(props) {
 
     const clave = localStorage.getItem('chatGptApiKey');
     if (clave) {
-      getCompletion(textArea.value, props.name)
+      getCompletion(textArea.value, artist.name)
         .then((respuesta) => respuesta.json())
         .then((respuestaArtista) => {
           const response = respuestaArtista.choices[0].message.content;
