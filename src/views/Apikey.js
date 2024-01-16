@@ -1,6 +1,6 @@
 import { header } from "../componentes/header.js";
 import { pieDePagina } from "../componentes/footer.js";
-import { formularioEnviar } from "../componentes/formulario.js";
+import { formularioApiKey } from "../componentes/formularioApi.js";
 import { iconHome } from "../componentes/iconos.js";
 import { botonChatGeneral } from "../componentes/bchatGrupal.js";
 import { botonChatIndividual } from "../componentes/bchatGrupal.js";
@@ -23,8 +23,7 @@ contenedorAPI.appendChild(contenedorIconoApi);
   apiTitulo.className='apiTitulo';
   contenedorAPI.appendChild(apiTitulo);
 
-  
-  contenedorAPI.appendChild(formularioEnviar());
+  contenedorAPI.appendChild(formularioApiKey());
   const botonesChats = document.createElement('div');
   botonesChats.className = "botonesChats";
   botonesChats.appendChild(botonChatGeneral());
@@ -46,7 +45,8 @@ navigateTo("/");
   });
 
   const botonEnviar = contenedorAPI.querySelector("#botonEnviar");
-  const apiKey = contenedorAPI.querySelector("#textArea");
+ console.log(botonEnviar);
+   const apiKey = contenedorAPI.querySelector("#password");
     botonEnviar.addEventListener("click", () => {
       console.log(apiKey.value);
         localStorage.setItem("chatGptApiKey", apiKey.value);

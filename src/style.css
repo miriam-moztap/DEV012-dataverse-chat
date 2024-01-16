@@ -249,7 +249,6 @@ div.contDetails {
   margin: auto;
   overflow-x: hidden;
   overflow-y: visible;
-
   height: 450px;
   width: 800px;
   resize: none;
@@ -259,6 +258,7 @@ div.contDetails {
   color: #fff;
   font-size: 0.6cm;
   font-weight: bold;
+  padding: 20px;
 }
 
 .textArea {
@@ -275,6 +275,7 @@ div.contDetails {
   border-radius: 10px;
   color: #fff;
   font-size: 0.7;
+  padding: 20px;
 }
 
 .mensaje {
@@ -293,10 +294,20 @@ div.contDetails {
 
 .botonLimpiarApi {
   display: flex;
+<<<<<<< HEAD
+  justify-content: flex-end; 
+  align-items: flex-start; 
+  height: 6vh; 
+  padding: 5px;
+  margin-top: -180px;
+  margin-left: 1100px;
+  width: 170px;
+=======
   justify-content: center;
   margin: auto;
   margin-top: 50px;
   width: 200px;
+>>>>>>> b107256c86ead4732760c7d17af04f810ef1bf94
   border-radius: 10px;
   font-size: 0.6cm;
   font-weight: bold;
@@ -326,7 +337,7 @@ div.contDetails {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.apiKey {
+.apiKey  {
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -335,15 +346,16 @@ div.contDetails {
   margin-top: 100px;
 }
 
-.formularioApiKey {
-  display: flex;
+#password{
+  display: block;
+  height: 1cm;
+  width: 8cm;
   justify-content: center;
   align-items: center;
   margin-top: auto;
-  font-family: Courier, sans-serif;
-  height: 350px;
-  width: 800px;
-  resize: none;
+  background-color: #e3cd93;
+  border: #222323;
+  border-radius: 5px;
 }
 
 .botonApiKey {
@@ -367,7 +379,7 @@ div.contDetails {
 .botonChatIndividual {
   margin-top: 50px;
   margin-left: 50px;
-  width: 120px;
+  width: 150px;
   border-radius: 10px;
   font-size: 0.6cm;
   font-weight: bold;
@@ -508,7 +520,11 @@ div.contDetails {
     justify-content: center;
     margin: auto;
     width: 200px;
+<<<<<<< HEAD
+    height: 360px;
+=======
     height: 400px;
+>>>>>>> b107256c86ead4732760c7d17af04f810ef1bf94
     font-size: small;
   }
 
@@ -544,6 +560,12 @@ div.contDetails {
     justify-content: center;
     height: 40px;
     width: 80px;
+  }
+
+  .botonLimpiarApi {
+    display: block;
+    justify-content: center;
+    margin: auto;
   }
 
   .footer {
