@@ -40,6 +40,7 @@ export function Personaje(props) {
       <dt><strong>Solista o grupo:</strong></dt><dd itemprop="artist">${artist.facts.artist}</dd>
   </li>
       `;
+      console.log(artist.name);
   const contDetails = d.createElement('div');
   contDetails.className = 'contDetails';
   contDetails.appendChild(detailElement);
@@ -64,7 +65,7 @@ export function Personaje(props) {
 
   const botonLimpiarApi = contPer.querySelector('.botonLimpiar');
   botonLimpiarApi.className = 'botonLimpiarApi';
-  botonLimpiarApi.textContent = 'Borra Api Key';
+  botonLimpiarApi.textContent = 'Vuelve a introducir tu API Key';
   botonBorrarApi.addEventListener('click', () => {
     localStorage.removeItem('chatGptApiKey');
     navigateTo('/apikey');
