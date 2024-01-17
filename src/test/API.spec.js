@@ -70,71 +70,76 @@
 import { getCompletion } from "../lib/API.js";
 
 // // Hacer implementación falsa de fetch
-global.fetch = jest.fn(() => Promise.resolve({
-  json: () => ({})
-}));
+global.fetch = jest.fn(() =>
+  Promise.resolve({
+    json: () => ({}),
+  })
+);
 
-
-describe('Endpoint de openIA', () => {
-  it('La API es llamada con los datos adecuados', () => {
-    const localStorageMock = {
-      getItem: jest.fn(),
-    };
+describe("Endpoint de openIA", () => {
+  it("La API es llamada con los datos adecuados", () => {
+    // const localStorageMock = {
+    //   getItem: jest.fn(),
+    // };
     // Configurar el mock de localStorage
-    global.localStorage = localStorageMock;
+    localStorage.setItem("chatGptApiKey", "123");
 
     const name = "Selena";
-    const API_KEY = 'mockApiKey'; // Agrega tu API_KEY de prueba aquí
+    // const API_KEY = "mockApiKey"; // Agrega tu API_KEY de prueba aquí
     const messages = [
       {
-        role: 'system',
+        role: "system",
         content: `Simula que eres ${name}, un personaje llamado ${name}. Si eres un grupo o banda, asume que eres el vocalista principal, si no, asume que eres el vocalista`,
       },
       {
-        role: 'user',
-        content: 'inputUsuario',
-      }
-    ]
-    localStorageMock.getItem.mockReturnValue(API_KEY);
-    getCompletion(API_KEY, messages);
-
-    expect(global.fetch).toBeCalledWith('https://api.openai.com/v1/chat/completions', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${API_KEY}`,
+        role: "user",
+        content: "inputUsuario",
       },
-      body: JSON.stringify({
-        model: 'gpt-3.5-turbo',
-        messages: messages
-      }),
-    });
+    ];
+    // localStorageMock.getItem.mockReturnValue(API_KEY);
+    getCompletion("inputUsuario", "Selena");
+
+    expect(global.fetch).toBeCalledWith(
+      "https://api.openai.com/v1/chat/completions",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer 123`,
+        },
+        body: JSON.stringify({
+          model: "gpt-3.5-turbo",
+          messages: messages,
+        }),
+      }
+    );
   });
 
-  it('El endpoint responde de manera correcta', () => {
-    const API_KEY = 'mockApiKey'; // Agrega tu API_KEY de prueba aquí
+  it("El endpoint responde de manera correcta", () => {
+    // const API_KEY = "mockApiKey"; // Agrega tu API_KEY de prueba aquí
     const response = {
-      "choices": [
+      choices: [
         {
-          "message": {
-            "role": "assistant",
-            "content": "¡Hola!"
-          }
+          message: {
+            role: "assistant",
+            content: "¡Hola!",
+          },
         },
       ],
     };
 
     global.fetch.mockResolvedValueOnce({
-      json: () => Promise.resolve(response)
+      json: () => Promise.resolve(response),
     });
 
-    return getCompletion(API_KEY, [{ role: 'user', content: 'foo' }])
-      .then(resolved => {
+    return getCompletion("¡Hola!", "Selena").then(
+      (resolved) => {
         expect(resolved).toEqual(response);
-      })
-      // .catch(error => {
-      //   // Manejar el error si es necesario
-      //   //console.error(error);
-      // });
+      }
+    );
+    // .catch(error => {
+    //   // Manejar el error si es necesario
+    //   //console.error(error);
+    // });
   });
 });
