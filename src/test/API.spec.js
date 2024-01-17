@@ -134,7 +134,9 @@ describe("Endpoint de openIA", () => {
 
     return getCompletion("¡Hola!", "Selena").then(
       (resolved) => {
-        expect(resolved).toEqual(response);
+        resolved.json().then((dataArtista) => {
+          expect(dataArtista).toEqual(response);
+        })
       }
     );
     // .catch(error => {
