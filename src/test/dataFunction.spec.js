@@ -1,11 +1,3 @@
-/*los test que yo haría: 
-1. que se ordene de A-Z
-2. que orden de Z-A
-3. que filtre de acuerdo a la categoría
-4. que dé una estadística
-5. que la estadística dé el número de albums
-6. que el número de álbums sea un dato numérico
-*/
 import { computeStats, filterData, sortData } from "../lib/dataFunctions.js";
 import { data as fakeData } from './data.js';
 
