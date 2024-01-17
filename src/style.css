@@ -134,9 +134,10 @@ footer {
 .cajaPrincipalChatG {
   display: flex;
   flex-direction: column;
+  margin:auto;
   place-items: center;
   justify-content: center;
-  margin-right: 8cm;
+  
 }
 
 .tarjeta dd,
@@ -172,15 +173,15 @@ footer {
 
 }
 
-.artistasCG {
-  display: flex;
+.ulCG {
+  display: block;
   justify-content: center;
   margin: auto;
   overflow-x: hidden;
   overflow-y:scroll;
   height: 10cm;
-  width: 16cm;
-  margin-left: 8cm;
+  width: 8cm;
+  
   margin-top: 1cm;
 
 }
@@ -289,14 +290,12 @@ div.contDetails {
   margin-left: 40px;
 }
 
-.botonLimpiarApi {
+ .botonLimpiarApi {
   display: flex;
-  justify-content: flex-end; 
+  justify-content: center; 
   align-items: flex-start; 
-  height: 6vh; 
   padding: 11px;
-  margin-top: -180px;
-  margin-left: 1100px;
+  margin:auto;
   width: 250px;
   border-radius: 10px;
   font-size: 0.4cm;
@@ -393,7 +392,7 @@ div.contDetails {
   font-size: 45px;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 1580px) {
   /*Codigo responsive para la página de HOME*/
 
   body {
@@ -492,10 +491,10 @@ div.contDetails {
     display: flex;
     justify-content: center;
     margin: auto;
-    padding: 5cm;
+    padding: 0.2cm;
 }
 
-@media screen and (max-width: 1040px) {
+
   /*Codigo responsive para el chat individual y para chat general*/
 
   .chatPersonaje {
@@ -511,11 +510,7 @@ div.contDetails {
     justify-content: center;
     margin: auto;
     width: 200px;
-<<<<<<< HEAD
     height: 360px;
-=======
-    height: 400px;
->>>>>>> b107256c86ead4732760c7d17af04f810ef1bf94
     font-size: small;
   }
 
@@ -564,7 +559,8 @@ div.contDetails {
   }
 
   .otraCaja {
-    display: flex;
+    display: block;
+    justify-content: center;
     justify-items: center;
     margin-top: 15px;
     flex-direction: column;
@@ -572,50 +568,52 @@ div.contDetails {
     
   }
   .cajaPrincipalChatG {
-    display: flex;
+    display:block;
     justify-content: center;
     margin:auto;
-    margin-left:60px;
+    margin-left:0.3cm;
+   
    
   }
   
-  .tarjeta dd,
+  .tarjeta dt,
   .tarjeta dd {
     display: flex;
     justify-content: center;
     margin: auto;
     color: #222323;
+    font-size: medium;
   }
   
   .tarjeta .imag {
-    height: 50px;
-    width: 50px;
+    height: 80px;
+    width: 80px;
     border-radius: 15%;
   }
   
   .tarjeta {
     box-sizing: border-box;
+    justify-content: center;
     border-radius: 10px;
     margin:auto;
-    margin-left: 0%;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: small;
     margin-bottom: 30px;
     background-color: #f2c343;
     text-align: center;
-    height: 140px;
-    width: 120px;
+    height: 6cm;
+    width: 5cm;
   
   }
   
-  .artistasCG {
+
+  .ulCG {
     display: block;
     justify-content: center;
     margin: auto;
     overflow-x: hidden;
     overflow-y: visible;
     height: 5cm;
-    width: 8cm;
+    width: 7cm;
   
   }
 

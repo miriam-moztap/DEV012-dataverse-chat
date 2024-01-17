@@ -31,7 +31,8 @@ export function renderItems(data, detalles=true) {
       <img class="imag" src="${element.imageUrl}" alt="imagen"/>
       `;
       tarjeta.innerHTML=datosTarjetasA;
-      ul.appendChild(tarjeta)
+      ul.className='ulCG';
+      ul.appendChild(tarjeta);
     }else{
     datosTarjetas = `
       <img class="imag" src="${element.imageUrl}" alt="imagen"/>

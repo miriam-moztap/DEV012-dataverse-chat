@@ -8,7 +8,7 @@ import { getCompletion } from '../lib/API.js';
 import data from '../data/dataset.js';
 import { renderItems } from '../componentes/cards.js';
 
-export function chatgeneral(props) {
+export function chatgeneral() {
   const d = document;
   const chatView = d.createElement('div');
   const iconoChatGeneral = d.createElement('div');
@@ -20,12 +20,15 @@ export function chatgeneral(props) {
   otraCaja.className = "otraCaja";
   const cajaPrincipal = d.createElement('div');
   cajaPrincipal.className = 'cajaPrincipalChatG';
-  cajaPrincipal.appendChild(chat());
-  cajaPrincipal.appendChild(formularioEnviar());
-  const artistas = d.createElement('div');
-  artistas.className = "artistasCG";
-  artistas.appendChild(renderItems(data, false));
-  otraCaja.appendChild(artistas);
+  const divFormulario = d.createElement('div');
+  divFormulario.appendChild(chat());
+  divFormulario.appendChild(formularioEnviar());
+  cajaPrincipal.appendChild(divFormulario);
+
+  // const artistas = d.createElement('div');
+  // artistas.className = "artistasCG";
+  // artistas.appendChild();
+  otraCaja.appendChild(renderItems(data, false));
   otraCaja.appendChild(cajaPrincipal);
   chatView.appendChild(otraCaja);
 
@@ -50,7 +53,7 @@ export function chatgeneral(props) {
       navigateTo('/apikey');
       return;
     }
-    const errorApi=d.createElement('button');
+    const errorApi = d.createElement('button');
     errorApi.className = 'errorApi';
     errorApi.textContent = 'La API Key es incorrecta, da click aquí para volver a introducirla';
     errorApi.addEventListener('click', () => {
@@ -71,7 +74,7 @@ export function chatgeneral(props) {
         })
         .catch((error) => {
           if (error) {
-            
+            return chatView;
           }
           chatView.appendChild(errorApi);
         });
