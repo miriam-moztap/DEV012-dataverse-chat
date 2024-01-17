@@ -12,7 +12,7 @@ import { iconChat, iconHome } from "../componentes/iconos.js";
 import { botonApiKey } from "../componentes/botonhref.js";
 
 
-export function Home(props) {
+export function Home() {
   const d = document;
   const homeContenedor = d.createElement("div");
   const filtros = d.createElement('div');
