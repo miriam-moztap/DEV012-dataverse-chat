@@ -1,10 +1,12 @@
+import { navigateTo } from "../router.js";
+
 export function botonApiKeyHome() {
   const button = document.createElement("button");
   button.textContent = "API Key";
   button.className = "botonApiKey";
   // Agregar un evento de clic al botón
   button.addEventListener("click", function () {
-    window.location.href = "/apikey";
+    navigateTo("/apikey");
   });
   return button;
 }
