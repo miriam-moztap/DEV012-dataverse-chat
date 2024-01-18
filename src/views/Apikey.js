@@ -1,6 +1,6 @@
 import { header } from "../componentes/header.js";
 import { pieDePagina } from "../componentes/footer.js";
-import { formularioApiKey } from "../componentes/formularioApi.js";
+import { formularioApiKey } from "../componentes/maskApiKey.js";
 import { iconHome } from "../componentes/iconos.js";
 import { botonChatGeneral } from "../componentes/bchatGrupal.js";
 import { botonChatIndividual } from "../componentes/bchatGrupal.js";

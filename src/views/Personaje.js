@@ -2,12 +2,12 @@
 import { header } from '../componentes/header.js';
 import { pieDePagina } from '../componentes/footer.js';
 import { chat, formularioEnviar } from '../componentes/formulario.js';
-
+import { botonEnviar, botonLimpiarApi } from '../componentes/botones.js';
 import { iconHome, iconChat } from '../componentes/iconos.js';
 
 import { getCompletion } from '../lib/API.js';
 import { navigateTo } from '../router.js';
-import { botonLimpiar } from '../componentes/botonlimpiar.js';
+//import { botonLimpiar } from '../componentes/botonlimpiar.js';
 import data from '../data/dataset.js';
 
 export function Personaje(props) {
@@ -25,7 +25,6 @@ export function Personaje(props) {
   // CONTENEDOR para almacenar el formulario y el los datos del personaje
   const chatPersonaje = d.createElement('section');
   chatPersonaje.className = 'chatPersonaje';
-
   const { id } = props;
   const artist = data.find((element) => element.id === id);
 
@@ -40,7 +39,7 @@ export function Personaje(props) {
       <dt><strong>Solista o grupo:</strong></dt><dd itemprop="artist">${artist.facts.artist}</dd>
   </li>
       `;
-  //console.log(artist.name);
+
   const contDetails = d.createElement('div');
   contDetails.className = 'contDetails';
   contDetails.appendChild(detailElement);
@@ -49,34 +48,33 @@ export function Personaje(props) {
   contChat.appendChild(chat());
   contChat.className = 'contChat';
   contChat.appendChild(formularioEnviar());
-  chatPersonaje.appendChild(contChat);
-  contPer.appendChild(chatPersonaje);
-  const botonBorrarApi = d.createElement('div');
-  botonBorrarApi.className = 'botonBorrarApi';
-
-  botonBorrarApi.appendChild(botonLimpiar());
-  contPer.appendChild(botonBorrarApi);
+  const botones = d.createElement('div');
+  botones.className = 'botonesP';
+  
   const piePersonaje = document.createElement('div');
   piePersonaje.className = 'pieChatIndividual';
   piePersonaje.appendChild(pieDePagina());
+  
+
+
+  botones.appendChild(botonEnviar());
+  botones.appendChild(botonLimpiarApi());
+  contChat.appendChild(botones);
+  chatPersonaje.appendChild(contChat);
+  contPer.appendChild(chatPersonaje);
   contPer.appendChild(piePersonaje);
-
-  // Funcionalidad botonBorrarApi
-
-  const botonLimpiarApi = contPer.querySelector('.botonLimpiar');
-  botonLimpiarApi.className = 'botonLimpiarApi';
-  botonLimpiarApi.textContent = 'Vuelve a introducir tu API Key';
-  botonBorrarApi.addEventListener('click', () => {
-    localStorage.removeItem('chatGptApiKey');
-    navigateTo('/apikey');
-
-  });
-  contChat.appendChild(botonLimpiarApi);
+    // Funcionalidad botonLimpiarApi
+    const botonLimpiar = contPer.querySelector('#botonLimpiarApi');
+    botonLimpiar.addEventListener('click', () => {
+      localStorage.removeItem('chatGptApiKey');
+      navigateTo('/apikey');
+    });
+    
   // funcionalidad para enviar el mensaje escrito en el text área a la zona de chat
   const textArea = contPer.querySelector('#textArea');
-  const botonEnviar = contPer.querySelector('#botonEnviar');
+  const buttonEnviar = contPer.querySelector('#botonEnviar');
   const cajaChat = contPer.querySelector('#chat');
-  botonEnviar.addEventListener('click', () => {
+  buttonEnviar.addEventListener('click', () => {
     if (textArea.value === '') {
       alert('Escribe un mensaje antes de enviar');
       return;

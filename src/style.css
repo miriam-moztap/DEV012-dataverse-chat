@@ -14,8 +14,7 @@ header {
   font-size: 40px;
 }
 
-.botonLimpiar,
-.botonEnviar {
+.botonLimpiar{
   background-color: #fff;
   padding: 5px;
   margin: 10px;
@@ -181,7 +180,6 @@ footer {
   overflow-y:scroll;
   height: 10cm;
   width: 8cm;
-  
   margin-top: 1cm;
 
 }
@@ -232,13 +230,15 @@ div.contDetails {
 }
 
 .botonEnviar {
-  margin-left: 150px;
-  background-color: #f7793e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  background-color: #8c61a3;
   height: 45px;
   width: 3cm;
   font-size: 0.5cm;
-  border-radius: 10px 90px / 120px;
-  margin-top: 25px;
+  border-radius: 10px;
 }
 
 .chat {
@@ -283,28 +283,35 @@ div.contDetails {
 
 .iconosChatIndividual {
   display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  margin-top: 80px;
-  margin-right: 40px;
-  margin-left: 40px;
+  gap: 40px;
+  justify-content: center;
+  margin: auto;
+  margin-top: 25px;
+  margin-right: 60px;
+  width: 5cm;
 }
 
+.botonesP{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin:auto;
+  width: 15cm;
+  padding: 15px;
+}
+/*Diseño vista Error*/
  .botonLimpiarApi {
   display: flex;
-  justify-content: center; 
-  align-items: flex-start; 
-  padding: 11px;
-  margin:auto;
-  width: 250px;
+  justify-content: center;
+  align-items: center;
+  margin:auto; 
+  height: 45px;
+  width: 7cm;
   border-radius: 10px;
-  font-size: 0.4cm;
-  text-align: center;
   font-weight: bold;
-  background-color: #e3cd93;
+  background-color: #8c61a3;
+  font-size: medium;
 }
-
-/*Diseño vista Error*/
 
 .contenedorImagen {
   display: flex;
@@ -383,12 +390,12 @@ div.contDetails {
   gap: 40px;
   justify-content: right;
   margin-right: 110px;
-  margin-top: 25px;
+  margin-top: 50px;
 }
 
 .iconHome,
 .iconChat {
-  color: #eec75c;
+  color: #2d405a;
   font-size: 45px;
 }
 
@@ -540,8 +547,8 @@ div.contDetails {
 
   .botonEnviar {
     display: flex;
+    justify-content: center;
     margin: auto;
-    margin-top: 5%;
     font-size: large;
     justify-content: center;
     height: 40px;
