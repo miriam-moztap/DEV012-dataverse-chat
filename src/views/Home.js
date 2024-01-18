@@ -9,7 +9,7 @@ import { estructuraOrdenamiento } from "../componentes/ordenamiento.js";
 import { sortData } from '../lib/dataFunctions.js';
 import { botonLimpiar } from "../componentes/botonlimpiar.js";
 import { iconChat, iconHome } from "../componentes/iconos.js";
-import { botonApiKey } from "../componentes/botonhref.js";
+import { botonApiKeyHome } from "../componentes/botones.js";
 
 
 export function Home() {
@@ -28,7 +28,7 @@ export function Home() {
   iconos.className = 'iconos';
   iconos.appendChild(iconHome())
   iconos.appendChild(iconChat());
-  iconos.appendChild(botonApiKey());
+  iconos.appendChild(botonApiKeyHome());
   homeContenedor.appendChild(iconos);
   homeContenedor.appendChild(header());
 

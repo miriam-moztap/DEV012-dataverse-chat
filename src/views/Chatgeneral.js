@@ -1,5 +1,5 @@
 import { chat, formularioEnviar } from '../componentes/formulario.js';
-
+import { botonEnviar } from '../componentes/botones.js';
 import { header } from '../componentes/header.js';
 import { pieDePagina } from '../componentes/footer.js';
 import { iconHome } from '../componentes/iconos.js';
@@ -23,6 +23,10 @@ export function chatgeneral() {
   const divFormulario = d.createElement('div');
   divFormulario.appendChild(chat());
   divFormulario.appendChild(formularioEnviar());
+  const botones = d.createElement('div');
+  botones.className = 'botonesP';
+  botones.appendChild(botonEnviar());
+  divFormulario.appendChild(botones);
   cajaPrincipal.appendChild(divFormulario);
 
   // const artistas = d.createElement('div');
@@ -31,13 +35,12 @@ export function chatgeneral() {
   otraCaja.appendChild(renderItems(data, false));
   otraCaja.appendChild(cajaPrincipal);
   chatView.appendChild(otraCaja);
-
   chatView.appendChild(pieDePagina());
 
   const textArea = chatView.querySelector('#textArea');
-  const botonEnviar = chatView.querySelector('#botonEnviar');
+  const buttonEnviar = chatView.querySelector('#botonEnviar');
   const cajaChat = chatView.querySelector('#chat');
-  botonEnviar.addEventListener('click', () => {
+  buttonEnviar.addEventListener('click', () => {
     if (textArea.value === '') {
       alert('Escribe un mensaje antes de enviar');
       return;
@@ -74,9 +77,9 @@ export function chatgeneral() {
         })
         .catch((error) => {
           if (error) {
-            return chatView;
+            
           }
-          chatView.appendChild(errorApi);
+          botones.appendChild(errorApi);
         });
     }
   });//click
