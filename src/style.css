@@ -312,6 +312,18 @@ div.contDetails {
   background-color: #8c61a3;
   font-size: medium;
 }
+.errorApi {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin:auto; 
+  height: 60px;
+  width: 7cm;
+  border-radius: 10px;
+  font-weight: bold;
+  background-color: #8c61a3;
+  font-size: medium;
+}
 
 .contenedorImagen {
   display: flex;
@@ -399,7 +411,7 @@ div.contDetails {
   font-size: 45px;
 }
 
-@media screen and (max-width: 1580px) {
+@media screen and (max-width: 1080px) {
   /*Codigo responsive para la página de HOME*/
 
   body {

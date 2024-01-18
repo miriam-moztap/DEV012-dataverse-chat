@@ -10,6 +10,7 @@
     "test": "jest --verbose --coverage test/",
     "open-coverage-report": "opener ./coverage/lcov-report/index.html",
     "start": "npx serve src/ -s"
+
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",
